@@ -7,7 +7,7 @@ import Menu from "../Sidebar/Menu";
 import Items from "./Items";
 
 const Map = () => {
-  const center = useMemo(() => ({ lat: -0.3921935964842486, lng: 36.95869511962907 }), []);
+  const center = useMemo(() => ({ lat: -7.2657297, lng: 112.7461411 }), []);
   const [selected, setSelected] = useState(center);
   const [submittedLocation, setSubmittedLocation] = useState(null);
   const [openMenu, setOpenMenu] = useState(false);
