@@ -7,6 +7,9 @@ import recents from "./recents.png";
 import print from "./print.png";
 import share from "./share.png";
 import lang from "./lang.png";
+import userAccount from "./account-circle.png";
+import eyeOutline from "./eye-outline.png";
+import eyeOffOutline from "./eye-off-outline.png";
 
 export {
 	gateremaps,
@@ -18,4 +21,8 @@ export {
 	print,
 	share,
 	lang,
+	userAccount,
+	eyeOutline,
+	eyeOffOutline,
+
 };
