@@ -10,6 +10,7 @@ import lang from "./lang.png";
 import userAccount from "./account-circle.png";
 import eyeOutline from "./eye-outline.png";
 import eyeOffOutline from "./eye-off-outline.png";
+import Logo from "./Logo.svg";
 
 export {
 	gateremaps,
@@ -24,5 +25,5 @@ export {
 	userAccount,
 	eyeOutline,
 	eyeOffOutline,
-
+	Logo,
 };

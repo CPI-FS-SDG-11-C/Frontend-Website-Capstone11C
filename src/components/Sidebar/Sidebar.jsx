@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
+
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
@@ -122,7 +124,12 @@ export default function MiniDrawer() {
         </DrawerHeader>
         <Divider />
         <List>
-          {['Home', 'Article', 'Profile', 'Log out'].map((text, index) => (
+          {[
+            { text: 'Home', icon: <HomeIcon sx={{ color: '#929191' }} />, link: '/home' },
+            { text: 'Article', icon: <ArticleIcon sx={{ color: '#929191' }} />, link: '/articles' },
+            { text: 'Profile', icon: <AccountCircleIcon sx={{ color: '#929191' }} />, link: '/profile' },
+            { text: 'Log out', icon: <LogoutIcon sx={{ color: '#929191' }} />, link: '/login' },
+          ].map(({ text, icon, link }) => (
             <ListItem key={text} disablePadding sx={{ display: 'block' }} >
               <ListItemButton
                 sx={{
@@ -140,7 +147,7 @@ export default function MiniDrawer() {
                     mt: '50%'
                   }}
                 >
-                  {index === 0 ? <HomeIcon /> : (index === 1 ? <ArticleIcon /> : (index === 2 ? <AccountCircleIcon /> : <LogoutIcon />))}
+                  <Link to={link}>{icon}</Link>
                 </ListItemIcon>
                 <ListItemText secondary={text} />
               </ListItemButton>
