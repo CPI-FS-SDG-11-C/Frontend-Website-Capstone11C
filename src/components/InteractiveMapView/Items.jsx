@@ -19,7 +19,7 @@ const Items = () => {
 				<MdHotel className=" text-lg" />
 				Ruang Terbuka Hijau
 			</div>
-			{/* <div className=" flex items-center justify-center gap-1 bg-[#fff] py-[6px] px-2 rounded-full shadow-md cursor-pointer hover:bg-[#f7f7f7] hover:shadow-lg">
+			<div className=" flex items-center justify-center gap-1 bg-[#fff] py-[6px] px-2 rounded-full shadow-md cursor-pointer hover:bg-[#f7f7f7] hover:shadow-lg">
 				<MdPhotoCamera className=" text-base" />
 				Things to do
 			</div>
@@ -38,7 +38,7 @@ const Items = () => {
 			<div className=" flex items-center justify-center gap-1 bg-[#fff] py-[6px] px-2 rounded-full shadow-md cursor-pointer hover:bg-[#f7f7f7] hover:shadow-lg">
 				<MdAtm className=" text-lg" />
 				ATMs
-			</div> */}
+			</div>
 		</div>
 	);
 };
