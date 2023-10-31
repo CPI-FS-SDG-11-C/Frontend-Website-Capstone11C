@@ -23,14 +23,14 @@ import LogoutIcon from '@mui/icons-material/Logout';
 
 const sidebarWidth = 240;
 
-// const openedMixin = (theme) => ({
-//   width: sidebarWidth,
-//   transition: theme.transitions.create('width', {
-//     easing: theme.transitions.easing.sharp,
-//     duration: theme.transitions.duration.enteringScreen,
-//   }),
-//   overflowX: 'hidden',
-// });
+const openedMixin = (theme) => ({
+  width: sidebarWidth,
+  transition: theme.transitions.create('width', {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.enteringScreen,
+  }),
+  overflowX: 'hidden',
+});
 
 const closedMixin = (theme) => ({
   transition: theme.transitions.create('width', {
@@ -40,7 +40,7 @@ const closedMixin = (theme) => ({
   overflowX: 'hidden',
   width: `calc(${theme.spacing(7)} + 1px)`,
   [theme.breakpoints.up('sm')]: {
-    width: `calc(${theme.spacing(8)} + 1px)`,
+    width: `calc(${theme.spacing(8)} + 20px)`,
   },
 });
 
@@ -75,14 +75,14 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     flexShrink: 0,
     whiteSpace: 'nowrap',
     boxSizing: 'border-box',
-    // ...(!open && {
-    //   ...openedMixin(theme),
-    //   '& .MuiDrawer-paper': openedMixin(theme),
-    // }),
-    // ...(!open && {
-    //   ...closedMixin(theme),
-    //   '& .MuiDrawer-paper': closedMixin(theme),
-    // }),
+    ...(!open && {
+      ...openedMixin(theme),
+      '& .MuiDrawer-paper': openedMixin(theme),
+    }),
+    ...(!open && {
+      ...closedMixin(theme),
+      '& .MuiDrawer-paper': closedMixin(theme),
+    }),
   }),
 );
 

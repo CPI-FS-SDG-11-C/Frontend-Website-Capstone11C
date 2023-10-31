@@ -10,5 +10,5 @@ export default function Places() {
   });
 
   if (!isLoaded) return <div>Loading...</div>;
-  // return <Map />;
+  return <Map />;
 }
