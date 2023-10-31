@@ -1,6 +1,7 @@
 import './style.css';
 
-export default function ListArticles() {
+export default function ListOfArticles() {
+    const image = "https://via.placeholder.com/150";
     return(
         <div>
             <div className="title-container">
@@ -12,7 +13,7 @@ export default function ListArticles() {
                     <li className="card-wrapper">
                         
                         <div className="card">
-                            <img id="thumbnail" src={image}/>
+                            <img id="thumbnail" src={image} style={{ width: '100%' }} />
                             <div className="article-title">
                                 <h3>Judul Artikel</h3>
                                 <p>Deskripsi Singkat Isi Artikel</p>
@@ -20,7 +21,7 @@ export default function ListArticles() {
                         </div>
 
                         <div className="card">
-                            <img id="thumbnail" src={image}/>
+                            <img id="thumbnail" src={image} style={{ width: '100%' }} />
                             <div className="article-title">
                                 <h3>Judul Artikel</h3>
                                 <p>Deskripsi Singkat Isi Artikel</p>
@@ -28,7 +29,7 @@ export default function ListArticles() {
                         </div>
 
                         <div className="card">
-                            <img id="thumbnail" src={image}/>
+                            <img id="thumbnail" src={image} style={{ width: '100%' }} />
                             <div className="article-title">
                                 <h3>Judul Artikel</h3>
                                 <p>Deskripsi Singkat Isi Artikel</p>
@@ -36,7 +37,7 @@ export default function ListArticles() {
                         </div>
 
                         <div className="card">
-                            <img id="thumbnail" src={image}/>
+                            <img id="thumbnail" src={image} style={{ width: '100%' }} />
                             <div className="article-title">
                                 <h3>Judul Artikel</h3>
                                 <p>Deskripsi Singkat Isi Artikel</p>
@@ -44,7 +45,7 @@ export default function ListArticles() {
                         </div>
 
                         <div className="card">
-                            <img id="thumbnail" src={image}/>
+                            <img id="thumbnail" src={image} style={{ width: '100%' }} />
                             <div className="article-title">
                                 <h3>Judul Artikel</h3>
                                 <p>Deskripsi Singkat Isi Artikel</p>

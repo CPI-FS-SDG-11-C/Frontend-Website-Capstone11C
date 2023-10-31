@@ -36,9 +36,9 @@ const Map = () => {
       {/* <div className="">
         <GetCoordinates onLocationSubmit={handleLocationSubmit} />
       </div> */}
-      <div>
+      {/* <div>
         <Sidebar openMenu={openMenu} setOpenMenu={setOpenMenu} />
-      </div>
+      </div> */}
       {/* <div>
         <Items />
       </div> */}

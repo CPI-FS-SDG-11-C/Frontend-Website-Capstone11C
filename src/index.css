@@ -8,6 +8,21 @@
 	font-family: "Lato", sans-serif;
 }
 
+.app-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 20%;
+  background-color: #f0f0f0;
+}
+
+.content {
+  width: 80%;
+  padding: 20px;
+}
 
 .avatar-login {
 	width: 100px;
@@ -31,3 +46,4 @@
 	background-color: #C1E6B8;
 	color: #3A4E48;
 }
+

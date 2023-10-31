@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -101,6 +101,8 @@ export default function MiniDrawer() {
     setOpen(false);
   };
 
+  const location = useLocation();
+
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -126,7 +128,7 @@ export default function MiniDrawer() {
         <List>
           {[
             { text: 'Home', icon: <HomeIcon sx={{ color: '#929191' }} />, link: '/home' },
-            { text: 'Article', icon: <ArticleIcon sx={{ color: '#929191' }} />, link: '/articles' },
+            { text: 'Articles', icon: <ArticleIcon sx={{ color: '#929191' }} />, link: '/articles' },
             { text: 'Profile', icon: <AccountCircleIcon sx={{ color: '#929191' }} />, link: '/profile' },
             { text: 'Log out', icon: <LogoutIcon sx={{ color: '#929191' }} />, link: '/login' },
           ].map(({ text, icon, link }) => (
@@ -138,6 +140,11 @@ export default function MiniDrawer() {
                   justifyContent: open ? 'flex-start' : 'center',
                   px: 2.5,
                 }}
+                onClick={() => {
+                    if (text === "Log out" || location.pathname === link) {
+                      setOpen(false);
+                    }
+                  }}
               >
                 <ListItemIcon
                   sx={{
