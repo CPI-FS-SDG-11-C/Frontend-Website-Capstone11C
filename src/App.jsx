@@ -17,6 +17,7 @@ function App() {
           <Route index element={<Places />} />
           <Route path="/home" element={<Places />} />
           <Route path="/articles" element={<ListOfArticles />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
         </Routes>
@@ -25,4 +26,4 @@ function App() {
   );
 }
 
-export default App;
+export default App;
