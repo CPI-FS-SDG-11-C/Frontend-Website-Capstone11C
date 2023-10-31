@@ -1,4 +1,5 @@
 import './style.css';
+import {Link} from 'react-router-dom';
 
 export default function ListArticles() {
     return(
@@ -17,6 +18,7 @@ export default function ListArticles() {
                                 <h3>Judul Artikel</h3>
                                 <p>Deskripsi Singkat Isi Artikel</p>
                             </div>
+                            <Link to="/read-article" className="link">Baca Selengkapnya</Link>
                         </div>
 
                         <div className="card">
@@ -25,6 +27,7 @@ export default function ListArticles() {
                                 <h3>Judul Artikel</h3>
                                 <p>Deskripsi Singkat Isi Artikel</p>
                             </div>
+                            <Link to="/read-article" className="link">Baca Selengkapnya</Link>
                         </div>
 
                         <div className="card">
@@ -33,6 +36,7 @@ export default function ListArticles() {
                                 <h3>Judul Artikel</h3>
                                 <p>Deskripsi Singkat Isi Artikel</p>
                             </div>
+                            <Link to="/read-article" className="link">Baca Selengkapnya</Link>
                         </div>
 
                         <div className="card">
@@ -41,6 +45,7 @@ export default function ListArticles() {
                                 <h3>Judul Artikel</h3>
                                 <p>Deskripsi Singkat Isi Artikel</p>
                             </div>
+                            <Link to="/read-article" className="link">Baca Selengkapnya</Link>
                         </div>
 
                         <div className="card">
@@ -49,6 +54,7 @@ export default function ListArticles() {
                                 <h3>Judul Artikel</h3>
                                 <p>Deskripsi Singkat Isi Artikel</p>
                             </div>
+                            <Link to="/read-article" className="link">Baca Selengkapnya</Link>
                         </div>
 
                     </li>

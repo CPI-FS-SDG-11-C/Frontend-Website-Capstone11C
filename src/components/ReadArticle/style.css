@@ -9,10 +9,14 @@
 }
 
 .main-content {
-    padding: 50px;
+    padding: 0 50px;
     width: 960px;
     grid-column: 1 / span 2;
 }
+
+.content-container {
+    padding: 30px;
+  }  
 
 #cover {
     height: 400px;
@@ -52,9 +56,24 @@
 }
 
 .article-title {
-    padding: 15px 0;
+    padding: 8px 0 15px 0;
 }
 
 h3 {
-    margin-bottom: 4px;
+    margin-bottom: 5px;
 }
+
+.link {
+    text-decoration: none;
+    float: right;
+    margin: 10px;
+    color: gray;
+    font-size: 12px;
+  
+    transition: 0.3s;
+  }
+  
+  .link:hover {
+    color: black;
+    text-decoration: underline;
+  }
