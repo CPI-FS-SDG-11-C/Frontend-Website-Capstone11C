@@ -5,7 +5,6 @@ import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
 import MuiAppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
@@ -22,16 +21,16 @@ import ArticleIcon from '@mui/icons-material/Article';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LogoutIcon from '@mui/icons-material/Logout';
 
-const drawerWidth = 240;
+const sidebarWidth = 240;
 
-const openedMixin = (theme) => ({
-  width: drawerWidth,
-  transition: theme.transitions.create('width', {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.enteringScreen,
-  }),
-  overflowX: 'hidden',
-});
+// const openedMixin = (theme) => ({
+//   width: sidebarWidth,
+//   transition: theme.transitions.create('width', {
+//     easing: theme.transitions.easing.sharp,
+//     duration: theme.transitions.duration.enteringScreen,
+//   }),
+//   overflowX: 'hidden',
+// });
 
 const closedMixin = (theme) => ({
   transition: theme.transitions.create('width', {
@@ -45,13 +44,11 @@ const closedMixin = (theme) => ({
   },
 });
 
-const DrawerHeader = styled('div')(({ theme }) => ({
+const Sidebar = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
   padding: theme.spacing(0, 1),
-  // necessary for content to be below app bar
-  ...theme.mixins.toolbar,
 }));
 
 // const AppBar = styled(MuiAppBar, {
@@ -74,18 +71,18 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
-    width: drawerWidth,
+    width: sidebarWidth,
     flexShrink: 0,
     whiteSpace: 'nowrap',
     boxSizing: 'border-box',
-    ...(open && {
-      ...openedMixin(theme),
-      '& .MuiDrawer-paper': openedMixin(theme),
-    }),
-    ...(!open && {
-      ...closedMixin(theme),
-      '& .MuiDrawer-paper': closedMixin(theme),
-    }),
+    // ...(!open && {
+    //   ...openedMixin(theme),
+    //   '& .MuiDrawer-paper': openedMixin(theme),
+    // }),
+    // ...(!open && {
+    //   ...closedMixin(theme),
+    //   '& .MuiDrawer-paper': closedMixin(theme),
+    // }),
   }),
 );
 
@@ -106,15 +103,24 @@ export default function MiniDrawer() {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <Drawer variant="permanent" open={open}>
-        <DrawerHeader
+      <Drawer variant="permanent">
+        <Sidebar
             sx={{
-                  minHeight: 100,
-                  justifyContent: open ? 'initial' : 'center',
+                  minHeight: 60,
+                  justifyContent: 'center',
                   px: 2.5,
                 }}
         >
-            <ListItemIcon
+            <IconButton
+            onClick={handleDrawerOpen}
+            sx={{
+                    justifyContent: 'center',
+                    ...(open),
+                }}
+          >
+            <MenuIcon />
+          </IconButton>
+            {/* <ListItemIcon
                     sx={{
                         minWidth: 0,
                         mr: open ? 3 : 'auto',
@@ -122,8 +128,9 @@ export default function MiniDrawer() {
                     }}
             >
                 <MenuIcon />
-            </ListItemIcon>
-        </DrawerHeader>
+            </ListItemIcon> */}
+        </Sidebar>
+        
         <Divider />
         <List>
           {[
@@ -135,9 +142,10 @@ export default function MiniDrawer() {
             <ListItem key={text} disablePadding sx={{ display: 'block' }} >
               <ListItemButton
                 sx={{
-                  minHeight: 50,
+                  // height: 100,
                   flexDirection: 'column',
-                  justifyContent: open ? 'flex-start' : 'center',
+                  justifyContent: 'center',
+                  // my: '50%',
                   px: 2.5,
                 }}
                 onClick={() => {
@@ -148,10 +156,7 @@ export default function MiniDrawer() {
               >
                 <ListItemIcon
                   sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
                     justifyContent: 'center',
-                    mt: '50%'
                   }}
                 >
                   <Link to={link}>{icon}</Link>
