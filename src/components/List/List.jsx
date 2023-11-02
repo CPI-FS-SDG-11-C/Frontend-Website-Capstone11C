@@ -1,23 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CircularProgress, Grid, Typography, InputLabel, MenuItem, FormControl, Select } from '@material-ui/core';
-
+import district from '../../assets/RTH-percentage.json'; //comment kalau pake API
 import PlaceDetails from '../PlaceDetails/PlaceDetails';
 import useStyles from './styles';
+import Axios  from 'axios';
+
 
 const List = () => {
     const classes = useStyles();
     const [type,setType] = useState('districts');
     const [rating,setRating] = useState('districts');
 
-    const places = [
-        { name: 'Pakal'},
-        { name: 'Kecamatan B'},
-        { name: 'Kecamatan C'},
-        { name: 'Kecamatan D'},
-        { name: 'Kecamatan E'},
-        { name: 'Kecamatan F'},
-        { name: 'Kecamatan G'},
-    ];
+
+    
+    // Usestate & useEffect kalau nanti pake API :)
+    
+    // const [district,setDistrict] = useState([]);
+    // const apiUrl = import.meta.env.VITE_API_URL
+    // async function fetchData() {
+    //     try {
+    //       const response = await Axios.get(apiUrl+'/api/subdistricts');      
+          
+    //       return response;
+    //     } catch (error) {
+    //       console.error(error);
+    //     }
+    //   }
+    //   useEffect(() => {
+    //     fetchData().then((data) => setDistrict(data.data));
+    //   }, []);
+    
+    const arrayData= district.data
+
 
     return(
         <div className={classes.container}>
@@ -43,12 +57,15 @@ const List = () => {
                 </Select>
             </FormControl>
 
+
             <Grid container spacing={3} className={classes.list}>
-                {places ?.map((place, i) => (
-                    <Grid item key={i} xs={12} >
-                        <PlaceDetails place={place}/>
+                {
+                    arrayData.map((data) => (
+                    <Grid item key={data.kec_id} xs={12}>
+                        <PlaceDetails data={data} />
                     </Grid>
-                ))}
+                    ))
+                }
             </Grid>
         </div>
     );

@@ -22,43 +22,52 @@ import {
 
 import useStyles from "./styles";
 
-const PlaceDetails = ({ place }) => {
+const PlaceDetails = ({ data }) => {
   const classes = useStyles();
+  console.log("halaman detail")
+  console.log(data)
+
+  // akses data setiap RTH
+  const dataRTH = data.data_RTH
 
   return (
     <Card elevation={6}>
       <CardMedia
         style={{ height: 350 }}
-        images={place.photo ? place.photo.image.large.url : ""}
-        tittle={place.name}
+        images={data.photo ? data.photo.image.large.url : ""}
+        tittle={data.nama_kec}
       />
 
-      {/* isi */}
+      
+      {/* Kecamatan Start */}
       <CardContent>
         <Typography gutterBottom variant="h4">
-          {place.name} 25%
+          {data.nama_kec} - {data.percentage} %
         </Typography>
         <Box display="flex" justifyContent="space-between">
           <Typography variant="subtitle1">Luas Wilayah :</Typography>
           <Typography gutterBottom variant="subtitle1">
-            {place.price_level}
+            {data.luas_kec}
           </Typography>
         </Box>
 
         <Box display="flex" justifyContent="space-between">
-          <Typography variant="subtitle1">Jl. Raya Babat Jerawat No.1A, Babat Jerawat, Kec. Pakal, Surabaya, Jawa Timur 60197</Typography>
+          <Typography variant="subtitle1">{data.nama_kec}</Typography>
           <Typography gutterBottom variant="subtitle1">
-            {place.rangking}
+            {data.rangking? "5" : "*data ranking*"}
           </Typography>
         </Box>
+        {/* Kecamatan End */}
 
-        <Box>
+        {/* RTH list  Start*/}
+        {dataRTH.map((rth)=> (
+        <Box key={rth._id}>
           <Accordion defaultIndex={[1]} allowMultiple>
             <AccordionItem>
               <h2>
                 <AccordionButton>
                   <Box as="span" flex="1" textAlign="left">
-                    Taman A {/* Props Taman */}
+                    {rth.Nama} {/* Props Taman */}
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
@@ -70,71 +79,19 @@ const PlaceDetails = ({ place }) => {
                   color="primary"
                   onClick={() => window.open(place.web_url, "_blank")}
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
+                  <p>
+                  Alamat : {rth.Lokasi} <br />
+                  Kelurahan: {rth.Kelurahan} <br />
+                  Luas : {rth.Luas}
+                  </p>
                 </Button>
               </AccordionPanel>
             </AccordionItem>
           </Accordion>
         </Box>
 
-        <Box>
-          <Accordion defaultIndex={[1]} allowMultiple>
-            <AccordionItem>
-              <h2>
-                <AccordionButton>
-                  <Box as="span" flex="1" textAlign="left">
-                    Taman B {/* Props Taman */}
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h2>
-
-              <AccordionPanel pb={4}>
-                <Button
-                  size="small"
-                  color="primary"
-                  onClick={() => window.open(place.web_url, "_blank")}
-                >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
-                </Button>
-              </AccordionPanel>
-            </AccordionItem>
-          </Accordion>
-        </Box>
-
-        <Box>
-          <Accordion defaultIndex={[1]} allowMultiple>
-            <AccordionItem>
-              <h2>
-                <AccordionButton>
-                  <Box as="span" flex="1" textAlign="left">
-                    Taman C {/* Props Taman */}
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h2>
-
-              <AccordionPanel pb={4}>
-                <Button
-                  size="small"
-                  color="primary"
-                  onClick={() => window.open(place.web_url, "_blank")}
-                >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
-                </Button>
-              </AccordionPanel>
-            </AccordionItem>
-          </Accordion>
-        </Box>
+        ))}
+        {/* RTH list  End*/}
 
         {/* {place?.awards?.map((award) => (
                     <Box my={1} display="flex" justifyContent="space-between">
@@ -150,6 +107,7 @@ const PlaceDetails = ({ place }) => {
                 )} */}
       </CardContent>
     </Card>
+ 
   );
 };
 
