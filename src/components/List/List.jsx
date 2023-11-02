@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { CircularProgress, Grid, Typography, InputLabel, MenuItem, FormControl, Select } from '@material-ui/core';
-import district from '../../assets/RTH-percentage.json'; //comment kalau pake API
+import district from '../../assets/RTH-percentage.json'; //comment kalau pake API =====/
 import PlaceDetails from '../PlaceDetails/PlaceDetails';
 import useStyles from './styles';
 import Axios  from 'axios';
@@ -13,23 +13,35 @@ const List = () => {
 
 
     
-    // Usestate & useEffect kalau nanti pake API :)
+    // Usestate & useEffect kalau nanti pake API START :) ====/
     
     // const [district,setDistrict] = useState([]);
     // const apiUrl = import.meta.env.VITE_API_URL
+
     // async function fetchData() {
     //     try {
-    //       const response = await Axios.get(apiUrl+'/api/subdistricts');      
-          
-    //       return response;
+    //         const apiUrl = import.meta.env.VITE_API_URL;
+    //         const response = await Axios.get(apiUrl + '/api/subdistricts/subDist-And-RTH');
+    //         return response.data;
     //     } catch (error) {
-    //       console.error(error);
+    //         console.error(error);
+    //         return [];
     //     }
-    //   }
-    //   useEffect(() => {
-    //     fetchData().then((data) => setDistrict(data.data));
-    //   }, []);
+    // }
+    // useEffect(() => {
+    //     async function loadData() {
+    //         const data = await fetchData(); 
+    //         setDistrict(data.data); 
+    //     }
+
+    //     loadData(); 
+    // }, []);
+    // const arrayData= district
+
+    // USING API END ======/
     
+
+    // kalau pake file .json
     const arrayData= district.data
 
 
@@ -60,9 +72,9 @@ const List = () => {
 
             <Grid container spacing={3} className={classes.list}>
                 {
-                    arrayData.map((data) => (
-                    <Grid item key={data.kec_id} xs={12}>
-                        <PlaceDetails data={data} />
+                    arrayData.map((arr) => (
+                    <Grid item key={arr.kec_id} xs={12}>
+                        <PlaceDetails data={arr} />
                     </Grid>
                     ))
                 }
