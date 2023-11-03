@@ -3,7 +3,7 @@ import { useMemo, useState } from "react";
 import { PlacesAutocomplete } from "../Home/PlacesAutocomplete";
 import { FaBars, FaSearch } from "react-icons/fa";
 import GetCoordinates from "./GetCoordinates";
-import Sidebar from "../Sidebar/Sidebar";
+// import Sidebar from "../Sidebar/Sidebar";
 // import Items from "./Items";
 
 const Map = () => {
