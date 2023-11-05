@@ -6,6 +6,8 @@ import SignUp from "./components/UserAccount/Signup";
 import ListOfArticles from "./components/ListOfArticles/ListOfArticles";
 import ReadArticle from './components/ReadArticle/ReadArticle';
 import Sidebar from "./components/Sidebar/Sidebar";
+import Edit from "./components/UserAccount/editProfile";
+import Changepassword from "./components/UserAccount/changepassword";
 import "./index.css";
 
 function App() {  
@@ -19,6 +21,8 @@ function App() {
           <Route path="/articles" element={<ListOfArticles />} />
           <Route path="/read-article" element={<ReadArticle/>}/>
           <Route path="/profile" element={<Profile />} />
+          <Route path="/edit" element={<Edit />} />
+          <Route path="/changepassword" element={<Changepassword />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
         </Routes>
