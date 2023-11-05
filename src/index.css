@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Lato", sans-serif;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 20%;
+  background-color: #f0f0f0;
+}
+
+.content {
+  width: 80%;
+  padding: 20px;
+}
+
+.avatar-login {
+  width: 100px;
+  height: 100px;
+  background-color: #5abf87;
+}
+
+.auth-button {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
+  background-color: #b0e5c8;
+  color: #889c96;
+}
+.auth-button:hover {
+  background-color: #5abf87;
+  color: #3a4e48;
+}
+
+.auth-button:active {
+  background-color: #c1e6b8;
+  color: #3a4e48;
+}
+
+.main {
+  display: flex;
+  width: 1440px;
+  height: 1024px;
+  background: #fff;
+}
+
+.navbar {
+  width: 80px;
+  height: 1024px;
+  border: 1px solid #acacac;
+  background: #d9d9d9;
+  margin-right: 150px;
+}
+
+.box {
+  color: #000;
+  flex: 1;
+  margin-top: 50px;
+  margin-left: 200px;
+}
+
+.box > h3 {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 50px;
+}
+
+.userinfo {
+  display: flex;
+  /* margin-top: 100px; */
+  margin-bottom: 30px;
+}
+
+.picture {
+  margin-right: 100px;
+}
+
+.urc {
+  padding-top: 35px;
+  margin-right: 160px;
+}
+
+.urc > h2 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.urc > h3 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.buttonsec {
+  height: 40px;
+  width: 1450px;
+  margin-bottom: 30px;
+}
+
+.buttonsec > button {
+  margin-right: 40px;
+  width: 340px;
+  padding: 9px 0px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: #98797b;
+  color: #ffffff;
+}
+
+.buttonedit > button {
+  margin-right: 80px;
+  width: 340px;
+  padding: 9px 0px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: #98797b;
+  color: #ffffff;
+}
+
+.border-rating {
+  width: 1100px;
+  height: 539px;
+  padding-left: 40px;
+  padding-top: 40px;
+  border-radius: 15px;
+  border: 1px solid #000;
+  background: #fff;
+  padding-bottom: 40px;
+  height: auto;
+}
+
+.border-rating > h3 {
+  color: #000;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  /* line-height: normal; */
+}
+
+.inputedit {
+  padding-bottom: 35px;
+  border-radius: 15px;
+  /* border: 1px solid #000; */
+  height: auto;
+  width: 800px;
+  margin-bottom: 20px;
+  padding-top: 20px;
+
+}
+
+
+/* .filter {
+  display: flex;
+  width: 60px;
+  height: 28px;
+  margin-bottom: 5px;
+}
+
+.filter > button {
+  flex-shrink: 0;
+  border-radius: 8px;
+  border: 1px solid #98797b;
+  background: #f9f8f8;
+  margin-right: 10px;
+  padding: 5px 11px;
+  font-size: 12px;
+  font-weight: 500;
+} */
+
+.comment {
+  padding: 15px 15px;
+  border-radius: 12px;
+  width: 1000px;
+  height: 160px;
+  border: 0.5px solid #000;
+  margin-top: 15px;
+  height: auto;
+}
+
+.comment > h3 {
+  color: #000;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.comment > h4 {
+  color: #000;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.comment > h5 {
+  color: #000;
+  text-align: justify;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 90px;
+  padding-bottom: 1rem;
+}
+
+.rating > input {
+  /* flex: 1 1 0%; */
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+.rating > input::before {
+  content: "⭐";
+  filter: grayscale(100%) contrast(200%);
+  font-size: 100%;
+}
+
+.rating > input:checked::before,
+.rating > input:checked ~ input::before {
+  filter: unset;
+}
