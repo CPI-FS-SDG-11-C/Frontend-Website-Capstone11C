@@ -43,6 +43,21 @@ const Menu = ({ openMenu, setOpenMenu }) => {
     setExpanded(!expanded);
   };
 
+  const Search = styled('div')(({ theme }) => ({
+  position: 'relative',
+  borderRadius: theme.shape.borderRadius,
+  backgroundColor: alpha(theme.palette.common.white, 0.15),
+  '&:hover': {
+    backgroundColor: alpha(theme.palette.common.white, 0.25),
+  },
+  marginLeft: 0,
+  width: '100%',
+  [theme.breakpoints.up('sm')]: {
+    marginLeft: theme.spacing(1),
+    width: 'auto',
+  },
+}));
+
   return (
     <div
       className={classNames(
@@ -66,7 +81,8 @@ const Menu = ({ openMenu, setOpenMenu }) => {
         </div>
         <hr className="w-[100%]" />
         {/* Buat isinya disini */}
-        <Card className="w-[100%]" sx={{ maxWidth: 345 }}>
+        
+        <Card className="w-[100%] my-5" sx={{ maxWidth: 345 }}>
           <CardHeader
             avatar={
               <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
