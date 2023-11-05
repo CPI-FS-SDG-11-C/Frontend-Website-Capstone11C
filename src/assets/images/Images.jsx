@@ -11,6 +11,7 @@ import userAccount from "./account-circle.png";
 import eyeOutline from "./eye-outline.png";
 import eyeOffOutline from "./eye-off-outline.png";
 import Logo from "./Logo.svg";
+import hijausantara from "./hijausantara.png";
 
 export {
 	gateremaps,
@@ -26,4 +27,5 @@ export {
 	eyeOutline,
 	eyeOffOutline,
 	Logo,
+	hijausantara,
 };
