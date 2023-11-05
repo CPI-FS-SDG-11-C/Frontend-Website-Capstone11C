@@ -1,243 +1,152 @@
 import { useState } from "react";
 import { IoMdClose } from "react-icons/io";
-import { LuHistory } from "react-icons/lu";
-import { RiLayoutLeftLine } from "react-icons/ri";
-import { FaRegBookmark } from "react-icons/fa";
 import classNames from "classnames";
-import {
-	gateremaps,
-	contrbl,
-	location,
-	timeline,
-	data,
-	recents,
-	print,
-	share,
-	lang,
-} from "../../assets/images/Images";
+import { hijausantara } from "../../assets/images/Images";
+import { styled } from '@mui/material/styles';
+import Card from "@mui/material/Card";
+import CardHeader from "@mui/material/CardHeader";
+import CardMedia from "@mui/material/CardMedia";
+import CardContent from "@mui/material/CardContent";
+import CardActions from "@mui/material/CardActions";
+import Collapse from "@mui/material/Collapse";
+import Avatar from "@mui/material/Avatar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import { red } from "@mui/material/colors";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import ShareIcon from "@mui/icons-material/Share";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+
+const ExpandMore = styled((props) => {
+  const { expand, ...other } = props;
+  return <IconButton {...other} />;
+})(({ theme, expand }) => ({
+  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
+  marginLeft: 'auto',
+  transition: theme.transitions.create('transform', {
+    duration: theme.transitions.duration.shortest,
+  }),
+}));
 
 const Menu = ({ openMenu, setOpenMenu }) => {
-	const [isSelected, setIsSelected] = useState(false);
+  // const classes = useStyles()
+  const [isSelected, setIsSelected] = useState(false);
 
-	const menuItemsOne = [
-		{
-			id: 1,
-			icon: "contr",
-			name: "Saved",
-		},
-		{
-			id: 2,
-			icon: recents,
-			name: "Recents",
-		},
-		{
-			id: 3,
-			icon: contrbl,
-			name: "Your contributions",
-		},
-		{
-			id: 4,
-			icon: location,
-			name: "Location sharing",
-		},
-		{
-			id: 5,
-			icon: timeline,
-			name: "Your timeline",
-		},
-		{
-			id: 6,
-			icon: data,
-			name: "Your data in Maps",
-		},
-	];
-	const menuItemsTwo = [
-		{
-			id: 1,
-			icon: share,
-			name: "Share or embed map",
-		},
-		{
-			id: 2,
-			icon: print,
-			name: "Print",
-		},
-		{
-			id: 3,
-			icon: null,
-			name: "Add a missing place",
-		},
-		{
-			id: 4,
-			icon: null,
-			name: "Add your business",
-		},
-		{
-			id: 5,
-			icon: null,
-			name: "Edit the map",
-		},
-	];
-	const menuItemsThree = [
-		{
-			id: 1,
-			icon: null,
-			name: "Tips and tricks",
-		},
-		{
-			id: 2,
-			icon: null,
-			name: "Get help",
-		},
-		{
-			id: 3,
-			icon: null,
-			name: "Consumer information",
-		},
-	];
-	const menuItemsFour = [
-		{
-			id: 1,
-			icon: lang,
-			name: "Language",
-		},
-		{
-			id: 2,
-			icon: null,
-			name: "Search settings",
-		},
-		{
-			id: 3,
-			icon: null,
-			name: "Maps activity",
-		},
-	];
+  const handleCloseMenu = () => {
+    setOpenMenu(false);
+  };
 
-	const handleCloseMenu = () => {
-		setOpenMenu(false);
-	};
+  const [expanded, setExpanded] = useState(false);
 
-	return (
-		<div
-			className={classNames(
-				"px-5 flex flex-row absolute top-0 z-50 bg-[#fff] md:w-[23.5%] text-[#202124] text-xs h-[100%] overflow-y-scroll overflow-x-hidden transition-transform duration-300 transform",
-				{ "translate-x-0": openMenu, "-translate-x-full": !openMenu },
-			)}
-		>
-			<div className="w-[100%] ">
-				<div className="flex pt-3 w-[100%] justify-between items-center">
-					<a href="" className="cursor-pointer">
-						<img
-							className=" w-auto h-4 md:h-6"
-							src={gateremaps}
-							alt="gateremaps"
-						/>
-					</a>
-					<IoMdClose
-						onClick={handleCloseMenu}
-						className="text-[#616161] text-2xl cursor-pointer"
-					/>
-				</div>
-				<div className=" flex justify-between items-center my-3">
-					<div className="flex justify-between gap-6 items-center cursor-pointer">
-						<RiLayoutLeftLine className=" text-[#616161] text-2xl" />
-						<p className="text-[#0f0f0f]">Show side bar</p>
-					</div>
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
 
-					{/* <div
-						onClick={() => setIsSelected((isSelected) => !isSelected)}
-						className={classNames(
-							"flex w-[37px] h-[14px] bg-[#BDC1C6] rounded-full relative items-center cursor-pointer",
-							{
-								"bg-[#F2F7FE] justify-end": isSelected,
-							},
-						)}
-					> */}
-					<div
-						onClick={() => setIsSelected((isSelected) => !isSelected)}
-						className={
-							!isSelected
-								? " flex w-[37px] h-[14px] bg-[#BDC1C6] rounded-full relative items-center cursor-pointer shadow shadow-[#979797]"
-								: "flex w-[37px] h-[14px] rounded-full relative items-center cursor-pointer bg-[#F2F7FE] justify-end"
-						}
-					>
-						<span
-							className={
-								!isSelected
-									? "w-5 h-5 absolute bg-[#ffffff] rounded-full shadow shadow-[#898a8d] border border-[#f7f7f7]"
-									: "w-5 h-5 absolute bg-[#1A73E8] rounded-full shadow shadow-[#898a8d] "
-							}
-						/>
-					</div>
-				</div>
-				<hr className="w-[110%]" />
-				<div className="my-3 px-1">
-					{menuItemsOne.map((item) => {
-						return (
-							<div
-								key={item.id}
-								className="flex gap-6 items-center text-[#616161] hover:text-[#1a73e8] my-3 cursor-pointer grayscale hover:grayscale-0"
-							>
-								{/* <FaRegBookmark className="text-[#70757a] text-xl" /> */}
-								{item.id === 1 && <FaRegBookmark className="text-[23px]" />}
-								{item.id === 2 && <LuHistory className="text-[23px]" />}
-								{item.id !== 1 && item.id !== 2 && (
-									<img src={item.icon} className=" w-6" alt="icon" />
-								)}
-
-								<p className="text-xs">{item.name}</p>
-							</div>
-						);
-					})}
-				</div>
-				<hr className="w-[110%]" />
-				<div className="my-3 px-1">
-					{menuItemsTwo.map((item) => {
-						return (
-							<div
-								key={item.id}
-								className="flex gap-6 items-center text-[#494949] hover:text-[#1a73e8] my-3 cursor-pointer grayscale hover:grayscale-0"
-							>
-								{/* <FaRegBookmark className="text-[#70757a] text-xl" /> */}
-								{item.icon !== null && (
-									<img src={item.icon} className="w-6" alt="icon" />
-								)}
-								<p className="text-xs my-[1px]">{item.name}</p>
-							</div>
-						);
-					})}
-				</div>
-				<hr className="w-[110%]" />
-				<div className="my-3 px-1">
-					{menuItemsThree.map((item) => {
-						return (
-							<div
-								key={item.id}
-								className="flex gap-6 items-center text-[#494949] hover:text-[#1a73e8] my-3 cursor-pointer"
-							>
-								<p className="text-xs my-[1px]">{item.name}</p>
-							</div>
-						);
-					})}
-				</div>
-				<hr className="w-[110%]" />
-				<div className="my-3 px-1">
-					{menuItemsFour.map((item) => {
-						return (
-							<div
-								key={item.id}
-								className="flex gap-6 items-center text-[#494949] hover:text-[#1a73e8] my-3 cursor-pointer grayscale hover:grayscale-0"
-							>
-								<p className="text-xs my-[1px] flex items-center gap-1">
-									{item.name} {item.icon !== null && <img src={lang} alt="" />}
-								</p>
-							</div>
-						);
-					})}
-				</div>
-			</div>
-		</div>
-	);
+  return (
+    <div
+      className={classNames(
+        "px-5 flex flex-row absolute top-0 z-50 bg-[#fff] md:w-[23.5%] text-[#202124] text-xs h-[100%] overflow-y-scroll overflow-x-hidden transition-transform duration-300 transform",
+        { "translate-x-0": openMenu, "-translate-x-full": !openMenu }
+      )}
+    >
+      <div className="w-[100%] ">
+        <div className="flex p-3 w-[100%] justify-between items-center">
+          <a href="" className="cursor-pointer">
+            <img
+              className=" w-auto h-8 md:h-12"
+              src={hijausantara}
+              alt="hijausantara"
+            />
+          </a>
+          <IoMdClose
+            onClick={handleCloseMenu}
+            className="text-[#616161] text-2xl cursor-pointer"
+          />
+        </div>
+        <hr className="w-[100%]" />
+        {/* Buat isinya disini */}
+        <Card className="w-[100%]" sx={{ maxWidth: 345 }}>
+          <CardHeader
+            avatar={
+              <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+                R
+              </Avatar>
+            }
+            action={
+              <IconButton aria-label="settings">
+                <MoreVertIcon />
+              </IconButton>
+            }
+            title="Shrimp and Chorizo Paella"
+            subheader="September 14, 2016"
+          />
+          <CardMedia
+            component="img"
+            height="194"
+            image="/static/images/cards/paella.jpg"
+            alt="Paella dish"
+          />
+          <CardContent>
+            <CardActions disableSpacing>
+              <IconButton aria-label="add to favorites">
+                <FavoriteIcon />
+              </IconButton>
+              <IconButton aria-label="share">
+                <ShareIcon />
+              </IconButton>
+              <ExpandMore
+                expand={expanded}
+                onClick={handleExpandClick}
+                aria-expanded={expanded}
+                aria-label="show more"
+              >
+                <ExpandMoreIcon />
+              </ExpandMore>
+            </CardActions>
+            <Typography variant="body2" color="text.secondary">
+              This impressive paella is a perfect party dish and a fun meal to
+              cook together with your guests. Add 1 cup of frozen peas along
+              with the mussels, if you like.
+            </Typography>
+          </CardContent>
+          <Collapse in={expanded} timeout="auto" unmountOnExit>
+            <CardContent>
+              <Typography paragraph>Method:</Typography>
+              <Typography paragraph>
+                Heat 1/2 cup of the broth in a pot until simmering, add saffron
+                and set aside for 10 minutes.
+              </Typography>
+              <Typography paragraph>
+                Heat oil in a (14- to 16-inch) paella pan or a large, deep
+                skillet over medium-high heat. Add chicken, shrimp and chorizo,
+                and cook, stirring occasionally until lightly browned, 6 to 8
+                minutes. Transfer shrimp to a large plate and set aside, leaving
+                chicken and chorizo in the pan. Add pimentón, bay leaves,
+                garlic, tomatoes, onion, salt and pepper, and cook, stirring
+                often until thickened and fragrant, about 10 minutes. Add
+                saffron broth and remaining 4 1/2 cups chicken broth; bring to a
+                boil.
+              </Typography>
+              <Typography paragraph>
+                Add rice and stir very gently to distribute. Top with artichokes
+                and peppers, and cook without stirring, until most of the liquid
+                is absorbed, 15 to 18 minutes. Reduce heat to medium-low, add
+                reserved shrimp and mussels, tucking them down into the rice,
+                and cook again without stirring, until mussels have opened and
+                rice is just tender, 5 to 7 minutes more. (Discard any mussels
+                that don&apos;t open.)
+              </Typography>
+              <Typography>
+                Set aside off of the heat to let rest for 10 minutes, and then
+                serve.
+              </Typography>
+            </CardContent>
+          </Collapse>
+        </Card>
+      </div>
+    </div>
+  );
 };
 
 export default Menu;
