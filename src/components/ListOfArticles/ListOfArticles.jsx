@@ -1,4 +1,5 @@
 import './style.css';
+import {Link} from 'react-router-dom';
 
 export default function ListOfArticles() {
     const image = "https://via.placeholder.com/150";
@@ -18,6 +19,7 @@ export default function ListOfArticles() {
                                 <h3>Judul Artikel</h3>
                                 <p>Deskripsi Singkat Isi Artikel</p>
                             </div>
+                            <Link to="/read-article" className="link">Baca Selengkapnya</Link>
                         </div>
 
                         <div className="card">
@@ -26,6 +28,7 @@ export default function ListOfArticles() {
                                 <h3>Judul Artikel</h3>
                                 <p>Deskripsi Singkat Isi Artikel</p>
                             </div>
+                            <Link to="/read-article" className="link">Baca Selengkapnya</Link>
                         </div>
 
                         <div className="card">
@@ -34,6 +37,7 @@ export default function ListOfArticles() {
                                 <h3>Judul Artikel</h3>
                                 <p>Deskripsi Singkat Isi Artikel</p>
                             </div>
+                            <Link to="/read-article" className="link">Baca Selengkapnya</Link>
                         </div>
 
                         <div className="card">
@@ -42,6 +46,7 @@ export default function ListOfArticles() {
                                 <h3>Judul Artikel</h3>
                                 <p>Deskripsi Singkat Isi Artikel</p>
                             </div>
+                            <Link to="/read-article" className="link">Baca Selengkapnya</Link>
                         </div>
 
                         <div className="card">
@@ -50,6 +55,7 @@ export default function ListOfArticles() {
                                 <h3>Judul Artikel</h3>
                                 <p>Deskripsi Singkat Isi Artikel</p>
                             </div>
+                            <Link to="/read-article" className="link">Baca Selengkapnya</Link>
                         </div>
 
                     </li>

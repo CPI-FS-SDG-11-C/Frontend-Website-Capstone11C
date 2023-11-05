@@ -1,14 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Places from "./components/Home/Places";
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import ReadArticle from './components/ReadArticle/ReadArticle';
 import Login from "./components/UserAccount/Login";
 import Profile from "./components/UserAccount/Profile";
 import SignUp from "./components/UserAccount/Signup";
 import ListOfArticles from "./components/ListOfArticles/ListOfArticles";
+import ReadArticle from './components/ReadArticle/ReadArticle';
 import Sidebar from "./components/Sidebar/Sidebar";
 import "./index.css";
 
-function App() {
-
+function App() {  
   return (
     <BrowserRouter>
       <div className="app-container">
@@ -17,6 +18,7 @@ function App() {
           <Route index element={<Places />} />
           <Route path="/home" element={<Places />} />
           <Route path="/articles" element={<ListOfArticles />} />
+          <Route path="/read-article" element={<ReadArticle/>}/>
           <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
