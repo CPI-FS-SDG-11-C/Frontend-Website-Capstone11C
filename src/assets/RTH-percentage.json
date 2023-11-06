@@ -1,0 +1,455 @@
+{
+  "status": "success",
+  "code": 200,
+  "message": "Kecamatan berhasil didapatkan",
+  "data": [
+    {
+      "kec_id": "651081f561bfb21610ada432",
+      "totalLuas": 17135.32,
+      "data_RTH": [
+        {
+          "_id": "6510828461bfb21610ada465",
+          "Jenis": "Taman",
+          "Kelurahan": "Pakal",
+          "Nama": "Taman Cahaya",
+          "Lokasi": "Jl. Babat Jerawat",
+          "Luas": 16233,
+          "kec_id": "651081f561bfb21610ada432"
+        },
+        {
+          "_id": "6510828461bfb21610ada466",
+          "Jenis": "Taman",
+          "Kelurahan": "Babat Jerawat",
+          "Nama": "Taman Pakal",
+          "Lokasi": "Sebelah kelurahan Babat Jerawat BTKD",
+          "Luas": 902.32,
+          "kec_id": "651081f561bfb21610ada432"
+        }
+      ],
+      "luas_kec": 18570000,
+      "nama_kec": "PAKAL",
+      "percentage": "0.09"
+    },
+    {
+      "kec_id": "651081f561bfb21610ada42c",
+      "totalLuas": 41688,
+      "data_RTH": [
+        {
+          "_id": "6510828461bfb21610ada467",
+          "Jenis": "Taman",
+          "Kelurahan": "Embong Kaliasin",
+          "Nama": "Taman Apsari",
+          "Lokasi": "Jl. Gubernur Suryo",
+          "Luas": 5123,
+          "kec_id": "651081f561bfb21610ada42c"
+        },
+        {
+          "_id": "6510828461bfb21610ada468",
+          "Jenis": "Taman",
+          "Kelurahan": "Embong Kaliasin",
+          "Nama": "Taman AIS Nasution",
+          "Lokasi": "Jl. Panglima Sudirman",
+          "Luas": 9149,
+          "kec_id": "651081f561bfb21610ada42c"
+        },
+        {
+          "_id": "6510828461bfb21610ada46a",
+          "Jenis": "Taman",
+          "Kelurahan": "Peneleh",
+          "Nama": "Taman Buah Undaan",
+          "Lokasi": "Ex. SPBU Undaan Jl. Undaan Kulon No. 7",
+          "Luas": 1594,
+          "kec_id": "651081f561bfb21610ada42c"
+        },
+        {
+          "_id": "6510828461bfb21610ada46b",
+          "Jenis": "Taman",
+          "Kelurahan": "Embong Kaliasin",
+          "Nama": "Taman BMX Ketabang",
+          "Lokasi": "Jl. Ketabang Kali",
+          "Luas": 4500,
+          "kec_id": "651081f561bfb21610ada42c"
+        },
+        {
+          "_id": "6510828461bfb21610ada46c",
+          "Jenis": "Taman",
+          "Kelurahan": "Genteng",
+          "Nama": "Taman Ekspresi",
+          "Lokasi": "Jl. Genteng Kali No. 67",
+          "Luas": 6019,
+          "kec_id": "651081f561bfb21610ada42c"
+        },
+        {
+          "_id": "6510828461bfb21610ada46d",
+          "Jenis": "Taman",
+          "Kelurahan": "Ketabang",
+          "Nama": "Taman Prestasi",
+          "Lokasi": "Jl. Ketabang Kali No. 6",
+          "Luas": 15303,
+          "kec_id": "651081f561bfb21610ada42c"
+        }
+      ],
+      "luas_kec": 4090000,
+      "nama_kec": "GENTENG",
+      "percentage": "1.02"
+    },
+    {
+      "kec_id": null,
+      "totalLuas": 16881.57,
+      "data_RTH": [
+        {
+          "_id": "6510828461bfb21610ada469",
+          "Jenis": "Taman",
+          "Kelurahan": "Keputran",
+          "Nama": "Taman Keputran",
+          "Lokasi": "Jl. Kayoon No. 90",
+          "Luas": 2754.57,
+          "kec_id": null
+        },
+        {
+          "_id": "6510828461bfb21610ada477",
+          "Jenis": "Taman",
+          "Kelurahan": "Wiyung",
+          "Nama": "Taman Mozaik",
+          "Lokasi": "Jl. Wiyung Praja",
+          "Luas": 1556,
+          "kec_id": null
+        },
+        {
+          "_id": "6510828461bfb21610ada478",
+          "Jenis": "Taman",
+          "Kelurahan": "Balas klumprik",
+          "Nama": "Taman Balas Klumprik BTKD",
+          "Lokasi": "BTKD Jl. Balas Klumprik 92",
+          "Luas": 1796,
+          "kec_id": null
+        },
+        {
+          "_id": "6510828461bfb21610ada485",
+          "Jenis": "Taman",
+          "Kelurahan": "Krembangan Selatan",
+          "Nama": "Taman Sejarah",
+          "Lokasi": "Jl. Rajawali - Taman Jayengrono No. 2",
+          "Luas": 5315,
+          "kec_id": null
+        },
+        {
+          "_id": "6510828461bfb21610ada488",
+          "Jenis": "Taman",
+          "Kelurahan": "Krembangan Selatan",
+          "Nama": "Taman Kalongan",
+          "Lokasi": "Jl. Indrapura - Jl Taman Kalongan",
+          "Luas": 4165,
+          "kec_id": null
+        },
+        {
+          "_id": "6510828461bfb21610ada489",
+          "Jenis": "Taman",
+          "Kelurahan": "Krembangan Selatan",
+          "Nama": "Taman Krembangan",
+          "Lokasi": "Jl. Krembangan Barat / Timur",
+          "Luas": 1295,
+          "kec_id": null
+        }
+      ],
+      "percentage": "NaN"
+    },
+    {
+      "kec_id": "651081f561bfb21610ada43c",
+      "totalLuas": 31438.46,
+      "data_RTH": [
+        {
+          "_id": "6510828461bfb21610ada46e",
+          "Jenis": "Taman",
+          "Kelurahan": "Ngagel",
+          "Nama": "Taman Ngagel",
+          "Lokasi": "Stren Kali Ngagel utara taman depan novotel",
+          "Luas": 839.46,
+          "kec_id": "651081f561bfb21610ada43c"
+        },
+        {
+          "_id": "6510828461bfb21610ada46f",
+          "Jenis": "Taman",
+          "Kelurahan": "Darmo",
+          "Nama": "Taman Bungkul",
+          "Lokasi": "Jl. Raya Darmo",
+          "Luas": 10324,
+          "kec_id": "651081f561bfb21610ada43c"
+        },
+        {
+          "_id": "6510828461bfb21610ada470",
+          "Jenis": "Taman",
+          "Kelurahan": "Darmo",
+          "Nama": "Taman Lesti",
+          "Lokasi": "Jl. Lesti",
+          "Luas": 2314,
+          "kec_id": "651081f561bfb21610ada43c"
+        },
+        {
+          "_id": "6510828461bfb21610ada471",
+          "Jenis": "Taman",
+          "Kelurahan": "Ngagel",
+          "Nama": "Taman Lumumba",
+          "Lokasi": "Jl. Ngagel",
+          "Luas": 1578,
+          "kec_id": "651081f561bfb21610ada43c"
+        },
+        {
+          "_id": "6510828461bfb21610ada472",
+          "Jenis": "Taman",
+          "Kelurahan": "Ngagel",
+          "Nama": "Taman. Persahabatan",
+          "Lokasi": "Jl. Sulawesi No. 67",
+          "Luas": 4715,
+          "kec_id": "651081f561bfb21610ada43c"
+        },
+        {
+          "_id": "6510828461bfb21610ada473",
+          "Jenis": "Taman",
+          "Kelurahan": "Sawunggaling",
+          "Nama": "Taman. Ronggolawe",
+          "Lokasi": "Jl. Joyoboyo",
+          "Luas": 6376,
+          "kec_id": "651081f561bfb21610ada43c"
+        },
+        {
+          "_id": "6510828461bfb21610ada476",
+          "Jenis": "Taman",
+          "Kelurahan": "Wonokromo",
+          "Nama": "Taman Mayangkara",
+          "Lokasi": "Jl. A. Yani",
+          "Luas": 5292,
+          "kec_id": "651081f561bfb21610ada43c"
+        }
+      ],
+      "luas_kec": 8270000,
+      "nama_kec": "WONOKROMO",
+      "percentage": "0.38"
+    },
+    {
+      "kec_id": "651081f561bfb21610ada42b",
+      "totalLuas": 5542,
+      "data_RTH": [
+        {
+          "_id": "6510828461bfb21610ada474",
+          "Jenis": "Taman",
+          "Kelurahan": "Gayungan",
+          "Nama": "Taman. Pelangi ( Ex. SPBU A. Yani/Dolog )",
+          "Lokasi": "Jl. A. Yani No. 13B",
+          "Luas": 5542,
+          "kec_id": "651081f561bfb21610ada42b"
+        }
+      ],
+      "luas_kec": 4910000,
+      "nama_kec": "GAYUNGAN",
+      "percentage": "0.11"
+    },
+    {
+      "kec_id": "651081f561bfb21610ada42f",
+      "totalLuas": 1440.5,
+      "data_RTH": [
+        {
+          "_id": "6510828461bfb21610ada475",
+          "Jenis": "Taman",
+          "Kelurahan": "Jambangan",
+          "Nama": "Taman Jangkar",
+          "Lokasi": "Jl. Jambangan",
+          "Luas": 1440.5,
+          "kec_id": "651081f561bfb21610ada42f"
+        }
+      ],
+      "luas_kec": 4110000,
+      "nama_kec": "JAMBANGAN",
+      "percentage": "0.04"
+    },
+    {
+      "kec_id": "651081f561bfb21610ada433",
+      "totalLuas": 114559,
+      "data_RTH": [
+        {
+          "_id": "6510828461bfb21610ada479",
+          "Jenis": "Taman",
+          "Kelurahan": "Wonorejo",
+          "Nama": "Taman Kebun Bibit Wonorejo",
+          "Lokasi": "Jl. Kendalsari No. 70",
+          "Luas": 100000,
+          "kec_id": "651081f561bfb21610ada433"
+        },
+        {
+          "_id": "6510828461bfb21610ada47e",
+          "Jenis": "Taman",
+          "Kelurahan": "Penjaringansari",
+          "Nama": "Taman Kunang - Kunang",
+          "Lokasi": "Jl. Penjaringan Timur",
+          "Luas": 9681,
+          "kec_id": "651081f561bfb21610ada433"
+        },
+        {
+          "_id": "6510828461bfb21610ada481",
+          "Jenis": "Taman",
+          "Kelurahan": "Wonorejo",
+          "Nama": "Taman Pandugo",
+          "Lokasi": "Jl Pandugo Sisi Utara Kelurahan Wonorejo",
+          "Luas": 4878,
+          "kec_id": "651081f561bfb21610ada433"
+        }
+      ],
+      "luas_kec": 22940000,
+      "nama_kec": "RUNGKUT",
+      "percentage": "0.50"
+    },
+    {
+      "kec_id": "651081f561bfb21610ada437",
+      "totalLuas": 312943.3,
+      "data_RTH": [
+        {
+          "_id": "6510828461bfb21610ada47a",
+          "Jenis": "Taman",
+          "Kelurahan": "Keputih",
+          "Nama": "Taman Harmoni",
+          "Lokasi": "Bekas TPA Keputih",
+          "Luas": 84490.3,
+          "kec_id": "651081f561bfb21610ada437"
+        },
+        {
+          "_id": "6510828461bfb21610ada47b",
+          "Jenis": "Taman",
+          "Kelurahan": "Keputih",
+          "Nama": "Taman PUPR",
+          "Lokasi": "Jl. Keputih",
+          "Luas": 212542,
+          "kec_id": "651081f561bfb21610ada437"
+        },
+        {
+          "_id": "6510828461bfb21610ada47c",
+          "Jenis": "Taman",
+          "Kelurahan": "Keputih",
+          "Nama": "Taman Ex Incenerator",
+          "Lokasi": "Jl. Keputih",
+          "Luas": 12560,
+          "kec_id": "651081f561bfb21610ada437"
+        },
+        {
+          "_id": "6510828461bfb21610ada484",
+          "Jenis": "Taman",
+          "Kelurahan": "Nginden Jangkungan",
+          "Nama": "Taman Nginden Intan",
+          "Lokasi": "Jl. Nginden",
+          "Luas": 3351,
+          "kec_id": "651081f561bfb21610ada437"
+        }
+      ],
+      "luas_kec": 30170000,
+      "nama_kec": "SUKOLILO",
+      "percentage": "1.04"
+    },
+    {
+      "kec_id": "651081f561bfb21610ada42d",
+      "totalLuas": 36504,
+      "data_RTH": [
+        {
+          "_id": "6510828461bfb21610ada47d",
+          "Jenis": "Taman",
+          "Kelurahan": "Barata Jaya",
+          "Nama": "Taman Flora",
+          "Lokasi": "Jl. Raya Manyar no. 80 A",
+          "Luas": 33810,
+          "kec_id": "651081f561bfb21610ada42d"
+        },
+        {
+          "_id": "6510828461bfb21610ada483",
+          "Jenis": "Taman",
+          "Kelurahan": "Gubeng",
+          "Nama": "Taman. Lansia",
+          "Lokasi": "Ex. SPBU Biliton Jl. Raya Gubeng - Jl. Biliton",
+          "Luas": 2694,
+          "kec_id": "651081f561bfb21610ada42d"
+        }
+      ],
+      "luas_kec": 7920000,
+      "nama_kec": "GUBENG",
+      "percentage": "0.46"
+    },
+    {
+      "kec_id": "651081f561bfb21610ada438",
+      "totalLuas": 10401,
+      "data_RTH": [
+        {
+          "_id": "6510828461bfb21610ada47f",
+          "Jenis": "Taman",
+          "Kelurahan": "Tambaksari",
+          "Nama": "Taman 10 Nopember (Taman Mundu)",
+          "Lokasi": "Jl. Mundu",
+          "Luas": 5075,
+          "kec_id": "651081f561bfb21610ada438"
+        },
+        {
+          "_id": "6510828461bfb21610ada480",
+          "Jenis": "Taman",
+          "Kelurahan": "Tambaksari",
+          "Nama": "Taman Paliatif (Taman Soka)",
+          "Lokasi": "Jl. Soka, Jl. Kesumba",
+          "Luas": 1260,
+          "kec_id": "651081f561bfb21610ada438"
+        },
+        {
+          "_id": "6510828461bfb21610ada482",
+          "Jenis": "Taman",
+          "Kelurahan": "Tambaksari",
+          "Nama": "Taman Teratai",
+          "Lokasi": "Jl. Teratai No. 4",
+          "Luas": 4066,
+          "kec_id": "651081f561bfb21610ada438"
+        }
+      ],
+      "luas_kec": 8960000,
+      "nama_kec": "TAMBAKSARI",
+      "percentage": "0.12"
+    },
+    {
+      "kec_id": "651081f561bfb21610ada429",
+      "totalLuas": 14053.94,
+      "data_RTH": [
+        {
+          "_id": "6510828461bfb21610ada486",
+          "Jenis": "Taman",
+          "Kelurahan": "Kedung Cowek",
+          "Nama": "Taman Bulak",
+          "Lokasi": "Jl. Bulak",
+          "Luas": 2153.94,
+          "kec_id": "651081f561bfb21610ada429"
+        },
+        {
+          "_id": "6510828461bfb21610ada487",
+          "Jenis": "Taman",
+          "Kelurahan": "Kedung Cowek",
+          "Nama": "Taman Suroboyo",
+          "Lokasi": "Bulak Depan Sentra Ikan Bulak, Jl. Pantai Kenjeran",
+          "Luas": 11900,
+          "kec_id": "651081f561bfb21610ada429"
+        }
+      ],
+      "luas_kec": 6230000,
+      "nama_kec": "BULAK",
+      "percentage": "0.23"
+    },
+    {
+      "kec_id": "651081f561bfb21610ada430",
+      "totalLuas": 1080,
+      "data_RTH": [
+        {
+          "_id": "6510828461bfb21610ada48a",
+          "Jenis": "Taman",
+          "Kelurahan": "Tanah Kalikedinding",
+          "Nama": "Tanah Kali Kedinding",
+          "Lokasi": "Jl. Nambangan",
+          "Luas": 1080,
+          "kec_id": "651081f561bfb21610ada430"
+        }
+      ],
+      "luas_kec": 8510000,
+      "nama_kec": "KENJERAN",
+      "percentage": "0.01"
+    }
+  ]
+}
