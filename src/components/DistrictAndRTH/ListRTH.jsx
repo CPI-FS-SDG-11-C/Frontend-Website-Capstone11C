@@ -17,69 +17,33 @@ export default function ListRTH() {
   // const { showDetail, showDetailCard, hideDetailCard } = useDataContext();
   return (
     <>
-    <div style={{ overflowX: "auto", display: "flex", gap: "10px", padding: 5}}>
+    <div style={{ overflowX: "auto", gap: "50px", padding: 5}}>
 
     <Paper 
       elevation={3} 
       style={{ minWidth: 100}}
       
     >
-      <Card sx={{ maxWidth: 100, position: 'relative' }}>
+      <Card sx={{ maxWidth: 260, position: 'relative' }}>
         <CardActionArea  >
           <CardMedia
             component="img"
-            height="140"
-            width="100"
+            height="50"
+            width="240"
             image="https://placehold.co/700x300"
             alt="green iguana"
             style={{ position: 'relative' }}
           />
-          <CardContent  style={{ position: 'absolute', bottom: 0, left: 0,  background: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9))', color: 'white', overflow: 'hidden', width: '100%' }}>
+          <CardContent  style={{ position: 'absolute', bottom: 0, left: 0,  background: 'rgba(0, 0, 0, 0.3)', color: 'white', overflow: 'hidden', width: '100%' }}>
             <Typography gutterBottom component="div"  style={{ textOverflow: 'ellipsis', whiteSpace: 'wrap', overflow: 'hidden', fontSize: '14px' }}>
-              Taman Cempakaasdasd
+              Taman Cempaka
             </Typography>
           </CardContent>
         </CardActionArea>
       </Card>
     </Paper>
-    <Paper elevation={3} style={{ minWidth: 100 }}>
-      <Card sx={{ maxWidth: 100, position: 'relative' }}>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            height="140"
-            width="100" // Set the desired width for the image
-            image="https://placehold.co/700x300"
-            alt="green iguana"
-            style={{ position: 'relative' }}
-          />
-          <CardContent style={{ position: 'absolute', bottom: 0, left: 0,  background: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9))', color: 'white', overflow: 'hidden', width: '100%' }}>
-            <Typography gutterBottom component="div"  style={{ textOverflow: 'ellipsis', whiteSpace: 'wrap', overflow: 'hidden', fontSize: '14px' }}>
-              Taman Cempakaasdasd
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </Card>
-    </Paper>    
-    <Paper elevation={3} style={{ minWidth: 100 }}>
-      <Card sx={{ maxWidth: 100, position: 'relative' }}>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            height="140"
-            width="100" // Set the desired width for the image
-            image="https://placehold.co/700x300"
-            alt="green iguana"
-            style={{ position: 'relative' }}
-          />
-          <CardContent style={{ position: 'absolute', bottom: 0, left: 0,  background: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9))', color: 'white', overflow: 'hidden', width: '100%' }}>
-            <Typography gutterBottom component="div"  style={{ textOverflow: 'ellipsis', whiteSpace: 'wrap', overflow: 'hidden', fontSize: '14px' }}>
-              Taman Cempakaasdasd
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </Card>
-    </Paper>
+
+ 
 
 
     
