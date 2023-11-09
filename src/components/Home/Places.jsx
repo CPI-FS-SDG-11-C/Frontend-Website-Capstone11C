@@ -1,6 +1,9 @@
 import { useLoadScript } from "@react-google-maps/api";
-
+import React from 'react';
+import DetailRTH from "../DistrictAndRTH/DetailRTH";
 import Map from "../InteractiveMapView/Map";
+
+// import { DataProvider } from '../DistrictAndRTH/DataContext.js';
 
 export default function Places() {
   const apiKey = import.meta.env.VITE_REACT_APP_API_KEY;
@@ -10,5 +13,11 @@ export default function Places() {
   });
 
   if (!isLoaded) return <div>Loading...</div>;
-  return <Map />;
+  return <>
+    <Map/>
+    {/* <DataProvider>      
+      <DetailRTH/>      
+    </DataProvider> */}
+
+  </>
 }
