@@ -53,19 +53,12 @@
   background: #fff;
 }
 
-.navbar {
-  width: 80px;
-  height: 1024px;
-  border: 1px solid #acacac;
-  background: #d9d9d9;
-  margin-right: 150px;
-}
-
 .box {
   color: #000;
-  flex: 1;
   margin-top: 50px;
-  margin-left: 100px;
+  margin-left: 200px;
+  display: flex;
+  flex-direction: column;
 }
 
 .box > h3 {
@@ -102,11 +95,23 @@
 
 .buttonsec {
   height: 40px;
+  width: 1450px;
   margin-bottom: 30px;
 }
 
 .buttonsec > button {
   margin-right: 40px;
+  width: 340px;
+  padding: 9px 0px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: #98797b;
+  color: #ffffff;
+}
+
+.buttonedit > button {
+  margin-right: 80px;
   width: 340px;
   padding: 9px 0px;
   justify-content: center;
@@ -124,6 +129,8 @@
   border-radius: 15px;
   border: 1px solid #000;
   background: #fff;
+  padding-bottom: 40px;
+  height: auto;
 }
 
 .border-rating > h3 {
@@ -132,6 +139,16 @@
   font-weight: 700;
   margin-bottom: 20px;
   /* line-height: normal; */
+}
+
+.inputedit {
+  padding-bottom: 35px;
+  border-radius: 15px;
+  /* border: 1px solid #000; */
+  height: auto;
+  width: 800px;
+  margin-bottom: 20px;
+  padding-top: 20px;
 }
 
 /* .filter {
@@ -159,17 +176,18 @@
   height: 160px;
   border: 0.5px solid #000;
   margin-top: 15px;
+  height: auto;
 }
 
 .comment > h3 {
   color: #000;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .comment > h4 {
   color: #000;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 400;
   margin-bottom: 10px;
 }
@@ -177,7 +195,7 @@
 .comment > h5 {
   color: #000;
   text-align: justify;
-  font-size: 12px;
+  font-size: 13px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
