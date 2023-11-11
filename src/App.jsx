@@ -13,62 +13,84 @@ import MainView from "./components/Home/MainView";
 function App() {
   return (
     <BrowserRouter>
-      <div className="app-container">
-        <Routes>
-          <Route index element={<MainView />} />
-          <Route
-            index
-            path="/home"
-            element={<MainView />}
-          />
-          <Route
-            path="/articles"
-            element={
-              <div>
-                <Sidebar />
-                <ListOfArticles />
-              </div>
-            }
-          />
-          <Route
-            path="/read-article"
-            element={
-              <div>
-                <Sidebar />
-                <ReadArticle />
-              </div>
-            }
-          />
-          <Route
-            path="/profile"
-            element={
-              <div>
-                <Sidebar />
-                <Profile />
-              </div>
-            }
-          />
-          <Route
-            path="/edit"
-            element={
-              <div>
-                <Sidebar />
-                <Edit />
-              </div>
-            }
-          />
-          <Route
-            path="/changepassword"
-            element={
-              <div>
-                <Sidebar />
-                <ChangePassword />
-              </div>
-            }
-          />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
-        </Routes>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateAreas: `"sidebar main"`,
+          gridTemplateColumns: "5% 95%",
+        }}
+        className="bg-main-background"
+      >
+        <div style={{ gridArea: "main" }}>
+          <Routes>
+            <Route
+              index
+              element={
+                <>
+                  <Sidebar style={{ gridArea: "sidebar" }} />
+                  <MainView />
+                </>
+              }
+            />
+            <Route
+              index
+              path="/home"
+              element={
+                <>
+                  <Sidebar style={{ gridArea: "sidebar" }} />
+                  <MainView />
+                </>
+              }
+            />
+            <Route
+              path="/articles"
+              element={
+                <>
+                  <Sidebar style={{ gridArea: "sidebar" }} />
+                  <ListOfArticles />
+                </>
+              }
+            />
+            <Route
+              path="/read-article"
+              element={
+                <>
+                  <Sidebar style={{ gridArea: "sidebar" }} />
+                  <ReadArticle />
+                </>
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                <>
+                  <Sidebar style={{ gridArea: "sidebar" }} />
+                  <Profile />
+                </>
+              }
+            />
+            <Route
+              path="/edit"
+              element={
+                <>
+                  <Sidebar style={{ gridArea: "sidebar" }} />
+                  <Edit />
+                </>
+              }
+            />
+            <Route
+              path="/changepassword"
+              element={
+                <>
+                  <Sidebar style={{ gridArea: "sidebar" }} />
+                  <ChangePassword />
+                </>
+              }
+            />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
+          </Routes>
+        </div>
       </div>
     </BrowserRouter>
   );
