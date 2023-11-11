@@ -1,30 +1,71 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Places from "./components/Home/Places";
 import Login from "./components/UserAccount/Login";
 import Profile from "./components/UserAccount/Profile";
 import Edit from "./components/UserAccount/editProfile";
 import ChangePassword from "./components/UserAccount/changePassword";
 import SignUp from "./components/UserAccount/Signup";
 import ListOfArticles from "./components/ListOfArticles/ListOfArticles";
-import ReadArticle from './components/ReadArticle/ReadArticle';
+import ReadArticle from "./components/ReadArticle/ReadArticle";
 import Sidebar from "./components/Sidebar/Sidebar";
 import "./index.css";
+import MainView from "./components/Home/MainView";
 
-function App() {  
+function App() {
   return (
     <BrowserRouter>
       <div className="app-container">
-        {location.pathname !== "/login" && location.pathname !== "/signup" && (
-          <Sidebar />
-        )}
         <Routes>
-          <Route index element={<Places />} />
-          <Route path="/home" element={<Places />} />
-          <Route path="/articles" element={<ListOfArticles />} />
-          <Route path="/read-article" element={<ReadArticle />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/edit" element={<Edit />} />
-          <Route path="/changepassword" element={<ChangePassword />} />
+          <Route index element={<MainView />} />
+          <Route
+            index
+            path="/home"
+            element={<MainView />}
+          />
+          <Route
+            path="/articles"
+            element={
+              <div>
+                <Sidebar />
+                <ListOfArticles />
+              </div>
+            }
+          />
+          <Route
+            path="/read-article"
+            element={
+              <div>
+                <Sidebar />
+                <ReadArticle />
+              </div>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <div>
+                <Sidebar />
+                <Profile />
+              </div>
+            }
+          />
+          <Route
+            path="/edit"
+            element={
+              <div>
+                <Sidebar />
+                <Edit />
+              </div>
+            }
+          />
+          <Route
+            path="/changepassword"
+            element={
+              <div>
+                <Sidebar />
+                <ChangePassword />
+              </div>
+            }
+          />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
         </Routes>
@@ -33,4 +74,4 @@ function App() {
   );
 }
 
-export default App;
+export default App;
