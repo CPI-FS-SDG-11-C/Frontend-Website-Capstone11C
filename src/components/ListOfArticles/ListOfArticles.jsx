@@ -1,66 +1,71 @@
-import './style.css';
-import {Link} from 'react-router-dom';
+import React from "react";
+import {Link} from "react-router-dom";
+import {
+  Container,
+  Grid,
+  Card,
+  CardContent,
+  CardMedia,
+} from "@mui/material";
+import "./style.css";
 
-export default function ListOfArticles() {
-    const image = "https://via.placeholder.com/150";
-    return(
-        <div>
-            <div className="title-container">
-                <h1>News and Article</h1>
-            </div>
+const ListOfArticles = () => {
+  const image = "https://via.placeholder.com/150";
 
-            <div className="content-container">
-                <ul>
-                    <li className="card-wrapper">
-                        
-                        <div className="card">
-                            <img id="thumbnail" src={image} style={{ width: '100%' }} />
-                            <div className="article-title">
-                                <h3>Judul Artikel</h3>
-                                <p>Deskripsi Singkat Isi Artikel</p>
-                            </div>
-                            <Link to="/read-article" className="link">Baca Selengkapnya</Link>
-                        </div>
+  return (
+    <Container className="ml-16 w-fit h-screen xl:mx-auto">
+      <div className="py-8">
+        <h1>News and Article</h1>
+      </div>
+      <Grid container spacing={3}>
+        {articles.map((article, i) => (
+          <Grid item xs={12} sm={6} md={3} key={i}>
+            <Card>
+              <CardMedia
+                component="img"
+                height="140"
+                image={image}
+                alt="Judul Artikel"
+              />
+              <CardContent>
+                <h3>{article.title}</h3>
+                <p>{article.description}</p>
+                <div className="link">
+                  <Link to="/read-article">
+                    Baca Selengkapnya...
+                  </Link>
+                </div>
+              </CardContent>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+    </Container>
+  );
+};
 
-                        <div className="card">
-                            <img id="thumbnail" src={image} style={{ width: '100%' }} />
-                            <div className="article-title">
-                                <h3>Judul Artikel</h3>
-                                <p>Deskripsi Singkat Isi Artikel</p>
-                            </div>
-                            <Link to="/read-article" className="link">Baca Selengkapnya</Link>
-                        </div>
+const articles = [
+  {
+    title: "Judul Artikel 1",
+    description:
+      "Deskripsi singkat isi artikel 1",
+  },
+  {
+    title: "Judul Artikel 2",
+    description: "Deskripsi singkat isi artikel 2",
+  },
+  {
+    title: "Judul Artikel 3",
+    description: "Deskripsi singkat isi artikel 3",
+  },
+  {
+    title: "Judul Artikel 4",
+    description: "Deskripsi singkat isi artikel 4",
+  },
+  {
+    title: "Judul Artikel 5",
+    description: "Deskripsi singkat isi artikel 5",
+  },
+];
 
-                        <div className="card">
-                            <img id="thumbnail" src={image} style={{ width: '100%' }} />
-                            <div className="article-title">
-                                <h3>Judul Artikel</h3>
-                                <p>Deskripsi Singkat Isi Artikel</p>
-                            </div>
-                            <Link to="/read-article" className="link">Baca Selengkapnya</Link>
-                        </div>
-
-                        <div className="card">
-                            <img id="thumbnail" src={image} style={{ width: '100%' }} />
-                            <div className="article-title">
-                                <h3>Judul Artikel</h3>
-                                <p>Deskripsi Singkat Isi Artikel</p>
-                            </div>
-                            <Link to="/read-article" className="link">Baca Selengkapnya</Link>
-                        </div>
-
-                        <div className="card">
-                            <img id="thumbnail" src={image} style={{ width: '100%' }} />
-                            <div className="article-title">
-                                <h3>Judul Artikel</h3>
-                                <p>Deskripsi Singkat Isi Artikel</p>
-                            </div>
-                            <Link to="/read-article" className="link">Baca Selengkapnya</Link>
-                        </div>
-
-                    </li>
-                </ul>
-            </div>
-        </div>
-    )
-}
+export default ListOfArticles;
