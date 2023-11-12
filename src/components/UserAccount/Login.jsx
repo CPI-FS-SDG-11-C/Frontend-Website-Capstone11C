@@ -33,7 +33,8 @@ const theme = createTheme({
       'Josefin Sans',
       'sans-serif',
     ].join(','),
-  }
+  },
+  backgroundColor: 'black',
 });
 
 export default function Login() {
@@ -48,7 +49,7 @@ export default function Login() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs" className="h-screen">
+      <Container maxWidth="xs" className="h-screen">
         <CssBaseline />
         <Box
           sx={{

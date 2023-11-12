@@ -9,8 +9,8 @@
 }
 
 .main-content {
-    padding: 0 50px;
-    width: 960px;
+    margin-left: 56px;
+    width: 100%;
     grid-column: 1 / span 2;
 }
 
@@ -19,8 +19,7 @@
   }  
 
 #cover {
-    height: 400px;
-    width: 960px;
+    width: 50%;
     object-fit: cover;
     margin: 40px 0;
     border-radius: 10px;

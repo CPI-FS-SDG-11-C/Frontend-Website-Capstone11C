@@ -1,15 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Box,
   Grid,
   Typography,
-  Link,
   Card,
   CardMedia,
   CardContent,
-  Tabs,
-  Tab,
+  Button,
 } from "@mui/material";
+import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 import "./style.css";
 
 const ReadArticle = () => {
@@ -62,19 +62,19 @@ const ReadArticle = () => {
   return (
     <Box>
       <Grid container spacing={5} className="flex-nowrap">
-        <Grid
-          item
-          xs={12}
-          md={9}
-          className="main-content overflow-y-auto bg-blue-200 h-600"
-        >
+        <Grid item xs={12} md={9} className="main-content">
           <Box className="content-container">
+            <Link to="/articles" className="py-3" style={{ color: "#929191" }}>
+              <ArrowBackRoundedIcon fontSize="large" />
+            </Link>
             <Typography variant="h3" className="font-bold">
               {article.title}
             </Typography>
             <Typography variant="subtitle1">{article.author}</Typography>
             <img id="cover" src={article.cover} alt="Cover Image" />
-            <Typography variant="body1">{article.content}</Typography>
+            <Typography variant="body1" className="text-justify">
+              {article.content}
+            </Typography>
           </Box>
         </Grid>
         <Grid item className="related-content" xs={12} md={3}>

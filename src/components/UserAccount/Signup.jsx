@@ -47,23 +47,36 @@ export default function SignUp() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="xs" className="h-screen">
         <CssBaseline />
         <Box
           sx={{
             marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }} className='avatar-login'>
+          <Avatar
+            sx={{ m: 1, bgcolor: "secondary.main" }}
+            className="avatar-login"
+          >
             <LockOutlinedIcon sx={{ width: 50, height: 50 }} />
           </Avatar>
-          <Typography component="h1" variant="h5" className="font-bold" sx={{ mt: 1, fontFamily: 'Josefin Sans' }}>
+          <Typography
+            component="h1"
+            variant="h5"
+            className="font-bold"
+            sx={{ mt: 1, fontFamily: "Josefin Sans" }}
+          >
             Sign up
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          <Box
+            component="form"
+            noValidate
+            onSubmit={handleSubmit}
+            sx={{ mt: 3 }}
+          >
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
@@ -113,7 +126,7 @@ export default function SignUp() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
-              className='auth-button'
+              className="auth-button"
             >
               Sign Up
             </Button>

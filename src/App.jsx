@@ -18,8 +18,8 @@ function App() {
           display: "grid",
           gridTemplateAreas: `"sidebar main"`,
           gridTemplateColumns: "5% 95%",
+          backgroundColor: 'main-background',
         }}
-        className="bg-main-background"
       >
         <div style={{ gridArea: "main" }}>
           <Routes>
