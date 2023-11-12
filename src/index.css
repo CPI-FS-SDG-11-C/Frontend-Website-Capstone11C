@@ -55,8 +55,6 @@
 
 .box {
   color: #000;
-  margin-top: 50px;
-  margin-left: 200px;
   display: flex;
   flex-direction: column;
 }
@@ -70,8 +68,6 @@
 
 .userinfo {
   display: flex;
-  /* margin-top: 100px; */
-  margin-bottom: 30px;
 }
 
 .picture {
@@ -93,18 +89,11 @@
   font-weight: 400;
 }
 
-.buttonsec {
-  height: 40px;
-  width: 1450px;
-  margin-bottom: 30px;
-}
-
 .buttonsec > button {
-  margin-right: 40px;
-  width: 340px;
-  padding: 9px 0px;
+  justify-content: space-between;
+  width: 200px;
+  padding: 10px 0px;
   justify-content: center;
-  align-items: center;
   border-radius: 8px;
   background: #98797b;
   color: #ffffff;
@@ -122,14 +111,13 @@
 }
 
 .border-rating {
-  width: 1100px;
-  height: 539px;
-  padding-left: 40px;
-  padding-top: 40px;
+  width: 100%;
+  left: 100px;
+  margin: 10px auto;
+  padding: 20px;
   border-radius: 15px;
   border: 1px solid #000;
   background: #fff;
-  padding-bottom: 40px;
   height: auto;
 }
 
@@ -172,10 +160,10 @@
 .comment {
   padding: 15px 15px;
   border-radius: 12px;
-  width: 1000px;
-  height: 160px;
+  width: 100%;
+  height: auto;
   border: 0.5px solid #000;
-  margin-top: 15px;
+  margin: 15px 0;
   height: auto;
 }
 
