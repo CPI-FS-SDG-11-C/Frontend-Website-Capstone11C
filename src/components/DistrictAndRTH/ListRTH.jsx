@@ -9,14 +9,22 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import { CardActionArea } from "@mui/material";
-import DetailRTH from "./DetailRTH"
+import DetailRTH from "./DetailRTH";
+import ModalRTH from "./ModalRTH";
 // import { useDataContext } from "./DataContext";
 
 export default function ListRTH({ data }) {
   // const { showDetail, showDetailCard, hideDetailCard } = useDataContext();
+  // console.log(data);
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <>
-      <div style={{ overflowX: "auto", gap: "50px", padding: 5 }}>
+      <div
+        style={{ overflowX: "auto", gap: "50px", padding: 5 }} onClick={handleOpen}
+      >
         <Paper elevation={3} style={{ minWidth: 100 }}>
           <Card sx={{ maxWidth: 350, position: "relative" }}>
             <CardActionArea>
@@ -33,15 +41,16 @@ export default function ListRTH({ data }) {
                   position: "absolute",
                   bottom: 0,
                   left: 0,
-                  background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8))',
+                  background:
+                    "linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8))",
                   color: "white",
                   overflow: "hidden",
                   width: "100%",
                   paddingBottom: "3px",
-                  paddingLeft:"5px", // Adjust the value of padding as needed
-                  paddingRight:"5px", // Adjust the value of padding as needed
-                  paddingTop:"16px" // Adjust the value of padding as needed
-                   // Adjust the value of padding as needed
+                  paddingLeft: "5px", // Adjust the value of padding as needed
+                  paddingRight: "5px", // Adjust the value of padding as needed
+                  paddingTop: "16px", // Adjust the value of padding as needed
+                  // Adjust the value of padding as needed
                 }}
               >
                 <Typography
@@ -64,7 +73,8 @@ export default function ListRTH({ data }) {
         style={{ overflow: "visible", position: "absolute" }}
         className="z-50"
       >
-        <DetailRTH  />
+        {/* <DetailRTH  /> */}
+        <ModalRTH open={open} handleClose={handleClose} rth={data}/>
       </div>
     </>
   );
