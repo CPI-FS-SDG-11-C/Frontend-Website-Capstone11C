@@ -1,19 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { IoMdClose } from "react-icons/io";
 import classNames from "classnames";
 import { hijausantara } from "../../assets/images/Images";
-import { styled } from '@mui/material/styles';
+import { styled } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
 
-import DistrictCard from '../DistrictAndRTH/CardSubdistricts'
+import DistrictCard from "../DistrictAndRTH/CardSubdistricts";
+import Axios from "axios";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
 })(({ theme, expand }) => ({
-  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-  marginLeft: 'auto',
-  transition: theme.transitions.create('transform', {
+  transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
+  marginLeft: "auto",
+  transition: theme.transitions.create("transform", {
     duration: theme.transitions.duration.shortest,
   }),
 }));
@@ -32,6 +33,28 @@ const Menu = ({ openMenu, setOpenMenu }) => {
     setExpanded(!expanded);
   };
 
+  // fetch data SubDistrict
+  const [district, setDistrict] = useState([]);
+  // const apiUrl = import.meta.env.VITE_API_URL
+
+  async function fetchData() {
+    try {
+      const apiUrl = import.meta.env.VITE_API_URL;
+      const response = await Axios.get(apiUrl + "subdistricts/subDist-And-RTH");
+      return response.data;
+    } catch (error) {
+      console.error(error);
+      return [];
+    }
+  }
+  useEffect(() => {
+    async function loadData() {
+      const data = await fetchData();
+      setDistrict(data.data);
+    }
+    loadData();
+  }, []);
+  const arrayData = district;
   return (
     <div
       className={classNames(
@@ -56,7 +79,9 @@ const Menu = ({ openMenu, setOpenMenu }) => {
         <hr className="w-[100%]" />
         {/* Buat isinya disini */}
         <div className="pt-5">
-          <DistrictCard/>
+          {district.map((arr) => (
+            <DistrictCard key={arr.kec_id} data={arr} />
+          ))}
         </div>
       </div>
     </div>

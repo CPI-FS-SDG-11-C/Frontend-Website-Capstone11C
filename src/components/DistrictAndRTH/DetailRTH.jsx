@@ -19,7 +19,7 @@ export default function DetailRTH() {
     <div>
       <Card
         sx={{ maxWidth: 345, height: "100%", overflowY: "auto" }}
-        style={{ position: "absolute" }}
+        
       >
         <CardMedia
           component="img"
