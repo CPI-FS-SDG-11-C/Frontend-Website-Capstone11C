@@ -12,6 +12,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 
 import ListRTH from "./ListRTH";
+import Box from "@mui/material/Box";
 
 export default function DistrictCard({ data }) {
   const [expanded, setExpanded] = useState(false);
@@ -21,7 +22,7 @@ export default function DistrictCard({ data }) {
   };
 
   return (
-    <div className="py-1">
+   
       <Accordion
         expanded={expanded === data.kec_id}
         onChange={handleChange(data.kec_id)}
@@ -76,15 +77,15 @@ export default function DistrictCard({ data }) {
           >
             Data Taman
           </Typography>
-          <div>
+          <Box>
             {Array.isArray(data.data_RTH) && data.data_RTH.length > 0 ? (
               data.data_RTH.map((arr) => <ListRTH key={arr._id} data={arr} />)
             ) : (
               <p>No RTH data available.</p>
             )}
-          </div>
+          </Box>
         </AccordionDetails>
       </Accordion>
-    </div>
+
   );
 }

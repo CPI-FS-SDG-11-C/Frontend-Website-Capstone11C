@@ -2,27 +2,27 @@
 import React, { useState } from "react";
 
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
+
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
+
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import { CardActionArea } from "@mui/material";
-import DetailRTH from "./DetailRTH";
+import Box from "@mui/material/Box";
+// import DetailRTH from "./DetailRTH";
 import ModalRTH from "./ModalRTH";
-// import { useDataContext } from "./DataContext";
+
 
 export default function ListRTH({ data }) {
-  // const { showDetail, showDetailCard, hideDetailCard } = useDataContext();
-  // console.log(data);
-  const [open, setOpen] = React.useState(false);
+
+  const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   return (
     <>
-      <div
+      <Box
         style={{ overflowX: "auto", gap: "50px", padding: 5 }} onClick={handleOpen}
       >
         <Paper elevation={3} style={{ minWidth: 100 }}>
@@ -47,14 +47,14 @@ export default function ListRTH({ data }) {
                   overflow: "hidden",
                   width: "100%",
                   paddingBottom: "3px",
-                  paddingLeft: "5px", // Adjust the value of padding as needed
-                  paddingRight: "5px", // Adjust the value of padding as needed
-                  paddingTop: "16px", // Adjust the value of padding as needed
-                  // Adjust the value of padding as needed
+                  paddingLeft: "5px",
+                  paddingRight: "5px",
+                  paddingTop: "16px",
+                
                 }}
               >
                 <Typography
-                  component="div"
+                  component="Box"
                   sx={{
                     textOverflow: "ellipsis",
                     whiteSpace: "wrap",
@@ -68,14 +68,11 @@ export default function ListRTH({ data }) {
             </CardActionArea>
           </Card>
         </Paper>
-      </div>
-      <div
-        style={{ overflow: "visible", position: "absolute" }}
-        className="z-50"
-      >
+      </Box>
+      <Box>
         {/* <DetailRTH  /> */}
         <ModalRTH open={open} handleClose={handleClose} rth={data}/>
-      </div>
+      </Box>
     </>
   );
 }

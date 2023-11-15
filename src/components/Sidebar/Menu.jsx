@@ -2,8 +2,11 @@ import { useState, useEffect } from "react";
 import { IoMdClose } from "react-icons/io";
 import classNames from "classnames";
 import { hijausantara } from "../../assets/images/Images";
+
 import { styled } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
+import Skeleton from '@mui/material/Skeleton';
+import Stack from '@mui/material/Stack';
 
 import DistrictCard from "../DistrictAndRTH/CardSubdistricts";
 import Axios from "axios";
@@ -21,29 +24,24 @@ const ExpandMore = styled((props) => {
 
 const Menu = ({ openMenu, setOpenMenu }) => {
   // const classes = useStyles()
-  const [isSelected, setIsSelected] = useState(false);
 
   const handleCloseMenu = () => {
     setOpenMenu(false);
   };
 
-  const [expanded, setExpanded] = useState(false);
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
-
   // fetch data SubDistrict
   const [district, setDistrict] = useState([]);
-  // const apiUrl = import.meta.env.VITE_API_URL
+  const [loading, setLoading] = useState(true);
 
   async function fetchData() {
     try {
       const apiUrl = import.meta.env.VITE_API_URL;
       const response = await Axios.get(apiUrl + "subdistricts/subDist-And-RTH");
+      setLoading(false);  
       return response.data;
     } catch (error) {
       console.error(error);
+      setLoading(false);
       return [];
     }
   }
@@ -79,7 +77,18 @@ const Menu = ({ openMenu, setOpenMenu }) => {
         <hr className="w-[100%]" />
         {/* Buat isinya disini */}
         <div className="pt-5">
-          {district.map((arr) => (
+          {loading ? (<Stack spacing={1.5}>
+            <Skeleton variant="rounded" maxWidth={350} height={58} />
+            <Skeleton variant="rounded" maxWidth={350} height={58} />
+            <Skeleton variant="rounded" maxWidth={350} height={58} />
+            <Skeleton variant="rounded" maxWidth={350} height={58} />
+            <Skeleton variant="rounded" maxWidth={350} height={58} />
+            <Skeleton variant="rounded" maxWidth={350} height={58} />
+            <Skeleton variant="rounded" maxWidth={350} height={58} />
+            <Skeleton variant="rounded" maxWidth={350} height={58} />
+            <Skeleton variant="rounded" maxWidth={350} height={58} />
+            <Skeleton variant="rounded" maxWidth={350} height={58} />
+          </Stack>) : district.map((arr) => (
             <DistrictCard key={arr.kec_id} data={arr} />
           ))}
         </div>
