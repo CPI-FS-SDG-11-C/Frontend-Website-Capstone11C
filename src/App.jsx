@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ProtectedRoute from "./components/ProtectedRoute";
 import Login from "./components/UserAccount/Login";
 import Profile from "./components/UserAccount/Profile";
 import Edit from "./components/UserAccount/editProfile";
@@ -18,7 +19,7 @@ function App() {
           display: "grid",
           gridTemplateAreas: `"sidebar main"`,
           gridTemplateColumns: "5% 95%",
-          backgroundColor: 'main-background',
+          backgroundColor: "main-background",
         }}
       >
         <div style={{ gridArea: "main" }}>
@@ -28,7 +29,7 @@ function App() {
               element={
                 <>
                   <Sidebar style={{ gridArea: "sidebar" }} />
-                  <MainView />
+                  <ProtectedRoute component={MainView} />
                 </>
               }
             />
@@ -38,7 +39,7 @@ function App() {
               element={
                 <>
                   <Sidebar style={{ gridArea: "sidebar" }} />
-                  <MainView />
+                  <ProtectedRoute component={MainView} />
                 </>
               }
             />
@@ -47,7 +48,7 @@ function App() {
               element={
                 <>
                   <Sidebar style={{ gridArea: "sidebar" }} />
-                  <ListOfArticles />
+                  <ProtectedRoute component={ListOfArticles} />
                 </>
               }
             />
@@ -56,7 +57,7 @@ function App() {
               element={
                 <>
                   <Sidebar style={{ gridArea: "sidebar" }} />
-                  <ReadArticle />
+                  <ProtectedRoute component={ReadArticle} />
                 </>
               }
             />
@@ -65,7 +66,7 @@ function App() {
               element={
                 <>
                   <Sidebar style={{ gridArea: "sidebar" }} />
-                  <Profile />
+                  <ProtectedRoute component={Profile} />
                 </>
               }
             />
@@ -74,7 +75,7 @@ function App() {
               element={
                 <>
                   <Sidebar style={{ gridArea: "sidebar" }} />
-                  <Edit />
+                  <ProtectedRoute component={Edit} />
                 </>
               }
             />
@@ -83,7 +84,7 @@ function App() {
               element={
                 <>
                   <Sidebar style={{ gridArea: "sidebar" }} />
-                  <ChangePassword />
+                  <ProtectedRoute component={ChangePassword} />
                 </>
               }
             />

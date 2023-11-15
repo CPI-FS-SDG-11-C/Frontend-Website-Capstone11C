@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -18,27 +18,34 @@ import LogoutIcon from "@mui/icons-material/Logout";
 
 import Menu from "./Menu";
 import DetailRTH from "../DistrictAndRTH/DetailRTH";
+import { Navigate } from "react-router-dom";
 
 export default function Sidebar() {
   // const [open, setOpen] = useState(true);
   const [openMenu, setOpenMenu] = useState(false);
   const [showDetailRTH, setShowDetailRTH] = useState(false);
+  const navigate = useNavigate();
+  
+  const handleLogoutClick = () => {
+    const confirmLogout = window.confirm("Anda yakin ingin log out?");
 
-  // const handleLogoutClick = () => {
-  //   setOpen(false);
-  // };
+    if (confirmLogout) {
+      localStorage.removeItem("token");
+      navigate('/login');
+    }
+  };
 
   return (
     <>
       <div style={{ zIndex: openMenu ? 9999 : 0 }}>
         <Menu openMenu={openMenu} setOpenMenu={setOpenMenu} />
       </div>
-      {/* <div style={{ zIndex: showDetailRTH ? 9999 : 0 }} className="mx-auto">
+      <div style={{ zIndex: showDetailRTH ? 9999 : 0 }} className="mx-auto">
         <DetailRTH
           showDetailRTH={showDetailRTH}
           setShowDetailRTH={setShowDetailRTH}
         />
-      </div> */}
+      </div>
       <Box>
         <CssBaseline />
         <Drawer variant="permanent" open={open}>
@@ -73,7 +80,7 @@ export default function Sidebar() {
                 text: "Log out",
                 icon: <LogoutIcon sx={{ color: "#929191" }} />,
                 link: "/login",
-                // onClick: handleLogoutClick,
+                onClick: handleLogoutClick,
               },
             ].map(({ text, icon, link, onClick }) => (
               <ListItem key={text} disablePadding sx={{ display: "block" }}>

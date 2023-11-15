@@ -1,24 +1,33 @@
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import CssBaseline from "@mui/material/CssBaseline";
+import TextField from "@mui/material/TextField";
+import Link from "@mui/material/Link";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import axios from "axios";
+import { Navigate } from "react-router-dom";
 
 function Copyright(props) {
   return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
+    <Typography
+      variant="body2"
+      color="text.secondary"
+      align="center"
+      {...props}
+    >
+      {"Copyright © "}
       <Link color="inherit" href="#">
         HijauSantara
-      </Link>{' '}
+      </Link>{" "}
       {new Date().getFullYear()}
-      {'.'}
+      {"."}
     </Typography>
   );
 }
@@ -27,22 +36,71 @@ function Copyright(props) {
 
 const theme = createTheme({
   typography: {
-    fontFamily: [
-      'Lato',
-      'Josefin Sans',
-      'sans-serif',
-    ].join(','),
-  }
+    fontFamily: ["Lato", "Josefin Sans", "sans-serif"].join(","),
+  },
 });
 
 export default function SignUp() {
-  const handleSubmit = (event) => {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+
+    const registrationData = {
+      username,
+      email,
+      password,
+      phone_number: phoneNumber,
+    };
+
+    try {
+      const response = await axios.post(
+        "https://sunrise-mousy-restaurant.glitch.me/api/users/register",
+        registrationData
+      );
+      console.log(response.data);
+      alert("Pendaftaran berhasil!");
+      navigate('/login');
+    } catch (error) {
+      console.error("Error during API request:", error);
+      if (error.response) {
+        console.error("Server responded with error data:", error.response.data);
+      } else if (error.request) {
+        console.error("No response received from the server:", error.request);
+      } else {
+        console.error("Error setting up the request:", error.message);
+      }
+      alert("Pendaftaran gagal. Pengguna telah terdaftar.");
+    }
+    // await axios.post(
+    //   "https://sunrise-mousy-restaurant.glitch.me/api/users/register", registrationData
+    // ).then((response) => {
+    //   if (response.status === 200) {
+    //     alert("Pendaftaran berhasil!");
+    //   } else {
+    //     alert("Pendaftaran gagal");
+    //   }
+    // })
+    //   .catch((error) => { 
+    //     alert(error.message);
+    //   });
+
+    // try {
+
+    //   if (response.data.success) {
+    //     alert("Pendaftaran berhasil!");
+    //     console.log(response.data);
+    //   } else {
+    //     alert("Terjadi kesalahan saat pendaftaran.");
+    //     console.log(response.data);
+    //   }
+    // } catch (error) {
+    //   console.error("Terjadi kesalahan saat mengirim data ke API: ", error);
+    // }
   };
 
   return (
@@ -78,18 +136,20 @@ export default function SignUp() {
             sx={{ mt: 3 }}
           >
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12}>
                 <TextField
-                  autoComplete="given-name"
-                  name="firstName"
+                  autoComplete="username"
+                  name="username"
                   required
                   fullWidth
-                  id="firstName"
-                  label="First Name"
+                  id="username"
+                  label="Username"
                   autoFocus
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                 />
               </Grid>
-              <Grid item xs={12} sm={6}>
+              {/* <Grid item xs={12} sm={6}>
                 <TextField
                   required
                   fullWidth
@@ -98,7 +158,7 @@ export default function SignUp() {
                   name="lastName"
                   autoComplete="family-name"
                 />
-              </Grid>
+              </Grid> */}
               <Grid item xs={12}>
                 <TextField
                   required
@@ -107,6 +167,8 @@ export default function SignUp() {
                   label="Email Address"
                   name="email"
                   autoComplete="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -118,6 +180,22 @@ export default function SignUp() {
                   type="password"
                   id="password"
                   autoComplete="new-password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  fullWidth
+                  name="phoneNumber"
+                  label="Phone Number"
+                  type="tel"
+                  id="phoneNumber"
+                  value={phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
                 />
               </Grid>
             </Grid>
