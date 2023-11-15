@@ -33,7 +33,8 @@ const theme = createTheme({
       'Josefin Sans',
       'sans-serif',
     ].join(','),
-  }
+  },
+  backgroundColor: 'black',
 });
 
 export default function Login() {
@@ -48,26 +49,35 @@ export default function Login() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
+      <Container maxWidth="xs" className="h-screen">
         <CssBaseline />
         <Box
           sx={{
             marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
           <Avatar
             src="../../src/assets/images/account-circle.png"
             className="avatar-login"
             sx={{ m: 1 }}
+          ></Avatar>
+          <Typography
+            component="h1"
+            variant="h5"
+            className="font-bold"
+            sx={{ mt: 1, fontFamily: "Josefin Sans" }}
           >
-            </Avatar>
-          <Typography component="h1" variant="h5" className="font-bold" sx={{ mt: 1, fontFamily: 'Josefin Sans' }}>
             Log In
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          <Box
+            component="form"
+            onSubmit={handleSubmit}
+            noValidate
+            sx={{ mt: 1 }}
+          >
             <TextField
               margin="normal"
               required

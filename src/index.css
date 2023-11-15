@@ -10,7 +10,7 @@
 
 .app-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   height: 100vh;
 }
 
@@ -53,19 +53,10 @@
   background: #fff;
 }
 
-.navbar {
-  width: 80px;
-  height: 1024px;
-  border: 1px solid #acacac;
-  background: #d9d9d9;
-  margin-right: 150px;
-}
-
 .box {
   color: #000;
-  flex: 1;
-  margin-top: 50px;
-  margin-left: 100px;
+  display: flex;
+  flex-direction: column;
 }
 
 .box > h3 {
@@ -77,8 +68,6 @@
 
 .userinfo {
   display: flex;
-  /* margin-top: 100px; */
-  margin-bottom: 30px;
 }
 
 .picture {
@@ -100,13 +89,18 @@
   font-weight: 400;
 }
 
-.buttonsec {
-  height: 40px;
-  margin-bottom: 30px;
+.buttonsec > button {
+  justify-content: space-between;
+  width: 200px;
+  padding: 10px 0px;
+  justify-content: center;
+  border-radius: 8px;
+  background: #98797b;
+  color: #ffffff;
 }
 
-.buttonsec > button {
-  margin-right: 40px;
+.buttonedit > button {
+  margin-right: 80px;
   width: 340px;
   padding: 9px 0px;
   justify-content: center;
@@ -117,13 +111,14 @@
 }
 
 .border-rating {
-  width: 1100px;
-  height: 539px;
-  padding-left: 40px;
-  padding-top: 40px;
+  width: 100%;
+  left: 100px;
+  margin: 10px auto;
+  padding: 20px;
   border-radius: 15px;
   border: 1px solid #000;
   background: #fff;
+  height: auto;
 }
 
 .border-rating > h3 {
@@ -132,6 +127,16 @@
   font-weight: 700;
   margin-bottom: 20px;
   /* line-height: normal; */
+}
+
+.inputedit {
+  padding-bottom: 35px;
+  border-radius: 15px;
+  /* border: 1px solid #000; */
+  height: auto;
+  width: 800px;
+  margin-bottom: 20px;
+  padding-top: 20px;
 }
 
 /* .filter {
@@ -155,21 +160,22 @@
 .comment {
   padding: 15px 15px;
   border-radius: 12px;
-  width: 1000px;
-  height: 160px;
+  width: 100%;
+  height: auto;
   border: 0.5px solid #000;
-  margin-top: 15px;
+  margin: 15px 0;
+  height: auto;
 }
 
 .comment > h3 {
   color: #000;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .comment > h4 {
   color: #000;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 400;
   margin-bottom: 10px;
 }
@@ -177,7 +183,7 @@
 .comment > h5 {
   color: #000;
   text-align: justify;
-  font-size: 12px;
+  font-size: 13px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
