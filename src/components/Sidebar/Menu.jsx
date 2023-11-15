@@ -72,7 +72,7 @@ const Menu = ({ openMenu, setOpenMenu }) => {
     <div
       className={classNames(
         "px-5 flex flex-row absolute top-0 z-50 bg-[#fff] md:w-[23.5%] text-[#202124] text-xs h-[100%] overflow-y-scroll overflow-x-hidden transition-transform duration-300 transform",
-        { "translate-x-0": openMenu, "-translate-x-full": !openMenu }
+        { "translate-x-5": openMenu, "-translate-x-full": !openMenu }
       )}
     >
       <div className="w-[100%] ">

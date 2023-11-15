@@ -48,7 +48,7 @@ export default function ModalRTH({ open, handleClose, rth }) {
   const style = {
     position: "absolute",
     top: "50%",
-    left: "37.5%",
+    left: "44%",
     transform: "translate(-50%, -50%)",
     width: 360,
     height: 630,
