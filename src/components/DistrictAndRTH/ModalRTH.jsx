@@ -15,35 +15,37 @@ import Axios from "axios";
 export default function ModalRTH({ open, handleClose, rth }) {
   const [review, setReview] = useState([]);
   const [loading, setLoading] = useState(true);
- 
-
-  async function fetchDataReview() {
-    try {
-      const apiUrl = import.meta.env.VITE_API_URL;
-      const response = await Axios.get(apiUrl + `rths/${rth._id}/reviews`);
-      setLoading(false);
-      return response.data.data.reviews;
-    } catch (error) {
-      console.error(error);
-      setLoading(false);
-      return [];
-    }
-  }
-
+  const rthId = rth._id;
+  // async function fetchDataReview() {
+  //   try {
+      
+      
+  //   } catch (error) {
+  //     console.error(error);
+      
+  //     return [];
+  //   }
+  // }
 
   useEffect(() => {
+
     async function loadData() {
       try {
-        const reviewData = await fetchDataReview();
+        const apiUrl = import.meta.env.VITE_API_URL;
+        
+        const response = await Axios.get(apiUrl + `rths/${rthId}/reviews`);
+        setLoading(false);
+        const reviewData = response.data.data.reviews;
         setReview(reviewData);
       } catch (error) {
         console.error(error);
+        setLoading(false);
         setReview([]); 
       }
     }
 
     loadData();
-  }, []);
+  }, [rthId]);
 
   const style = {
     position: "absolute",
@@ -74,7 +76,7 @@ export default function ModalRTH({ open, handleClose, rth }) {
         />
         <Box sx={{ padding: 2 }}>
           <Typography
-            style={{ fontSize: "27px", fontWeight: "bold" }}
+            style={{ fontSize: "26px", fontWeight: "bold" }}
             id="modal-modal-title"
           >
             {rth.Nama}
@@ -126,7 +128,7 @@ export default function ModalRTH({ open, handleClose, rth }) {
           </Typography>
 
           {/* form komentar dan rating */}
-          <FormRatingComment  />
+          <FormRatingComment rth_id = {rth._id} review={review} setReview={setReview}/>
 
           <Divider className="my-4" />
 

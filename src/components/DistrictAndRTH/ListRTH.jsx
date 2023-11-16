@@ -2,60 +2,77 @@
 import React, { useState } from "react";
 
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
+
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
+
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import { CardActionArea } from "@mui/material";
-import DetailRTH from "./DetailRTH";
-// import { useDataContext } from "./DataContext";
+import Box from "@mui/material/Box";
+// import DetailRTH from "./DetailRTH";
+import ModalRTH from "./ModalRTH";
 
-export default function ListRTH() {
-  // const { showDetail, showDetailCard, hideDetailCard } = useDataContext();
+
+export default function ListRTH({ data }) {
+
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <>
-      <div style={{ overflowX: "auto", gap: "50px", padding: 5 }}>
+      <Box
+        style={{ overflowX: "auto", gap: "50px", padding: 5 }} onClick={handleOpen}
+      >
         <Paper elevation={3} style={{ minWidth: 100 }}>
-          <Card sx={{ maxWidth: 260, position: "relative" }}>
+          <Card sx={{ maxWidth: 350, position: "relative" }}>
             <CardActionArea>
               <CardMedia
                 component="img"
                 height="50"
                 width="240"
-                image="https://placehold.co/700x300"
-                alt="green iguana"
+                image="https://cdn-cms.pgimgs.com/static/2021/06/2.-8-Desain-Landscape-Taman-Bikin-Cantik-Rumah-2.jpg"
+                alt={data.Nama}
                 style={{ position: "relative" }}
               />
               <CardContent
-                style={{
+                sx={{
                   position: "absolute",
                   bottom: 0,
                   left: 0,
-                  background: "rgba(0, 0, 0, 0.3)",
+                  background:
+                    "linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8))",
                   color: "white",
                   overflow: "hidden",
                   width: "100%",
+                  paddingBottom: "3px",
+                  paddingLeft: "5px",
+                  paddingRight: "5px",
+                  paddingTop: "16px",
+                
                 }}
               >
                 <Typography
-                  gutterBottom
-                  component="div"
-                  style={{
+                  component="Box"
+                  sx={{
                     textOverflow: "ellipsis",
                     whiteSpace: "wrap",
                     overflow: "hidden",
                     fontSize: "14px",
                   }}
                 >
-                  Taman Cempaka
+                  {data.Nama}
                 </Typography>
               </CardContent>
             </CardActionArea>
           </Card>
         </Paper>
-      </div>
+      </Box>
+      <Box>
+        {/* <DetailRTH  /> */}
+        <ModalRTH open={open} handleClose={handleClose} rth={data}/>
+      </Box>
     </>
   );
 }

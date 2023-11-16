@@ -1,9 +1,9 @@
 import * as React from "react";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
+
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
+
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 
@@ -11,15 +11,13 @@ import ListRecomendation from "../Recomendation/ListRecomendation";
 import FormRatingComment from "../RatingComment/FormRatingComment";
 import ListRatingComment from "../RatingComment/ListRatingComment";
 
-// import { useDataContext } from "./DataContext";
-
 export default function DetailRTH() {
-  // const { showDetail } = useDataContext();
+
   return (
     <div>
       <Card
         sx={{ maxWidth: 345, height: "100%", overflowY: "auto" }}
-        style={{ position: "absolute" }}
+        
       >
         <CardMedia
           component="img"
@@ -41,7 +39,7 @@ export default function DetailRTH() {
             variant="subtitle2"
             style={{ color: "GrayText", paddingLeft: 3 }}
           >
-            2694 m
+            2694 km²
           </Typography>
           <Divider className="my-4" />
           <Typography style={{ fontSize: "20px", fontWeight: "inherit" }}>

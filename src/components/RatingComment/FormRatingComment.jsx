@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 import TextField from "@mui/material/TextField";
@@ -9,36 +9,90 @@ import ListItemAvatar from "@mui/material/ListItemAvatar";
 import ListItemText from "@mui/material/ListItemText";
 import Avatar from "@mui/material/Avatar";
 
-// import axios from "axios";
+import Axios from "axios";
 
-export default function FormRatingComment() {
-  const [value, setValue] = useState(2);
+export default function FormRatingComment({ rth_id, review, setReview }) {
+  const [value, setValue] = useState(0);
   const [comment, setComment] = useState("");
+  const [token, setToken] = useState(localStorage.getItem("token"));
+  const [userData, setUserData] = useState({});
 
-  //   const handleSubmit = async (event) => {
-  //     event.preventDefault();
+  useEffect(() => {
 
-  //     const data = {
-  //       rating: value,
-  //       comment: comment,
-  //     };
+    if (!token) {
+      console.error("Tidak ada token");
+      // alert('Tidak ada token');
 
-  //     try {
-  //       const response = await axios.post("YOUR_API_ENDPOINT", data);
+      return;
+    }
+    const fetchUser = async () => {
+      try {
+        const response = await fetch(
+          "https://soft-held-cobweb.glitch.me/api/users/profile",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              authorization: token,
+            },
+          }
+        );
 
-  //       console.log("API response:", response.data);
-  //     } catch (error) {
-  //       console.error("API request failed:", error);
-  //     }
-  //   };
+        if (response.ok) {
+          const data = await response.json();
+          setUserData(data.data);
+        } else {
+          console.error(`Error: ${response.status} - ${response.statusText}`);
+        }
+      } catch (error) {
+        console.error(`Error: ${error.message}`);
+      }
+    };
+    fetchUser();
+  }, []);
+
+  const handleSubmit = async () => {
+    try {
+
+      const response = await fetch(
+        `https://sunrise-mousy-restaurant.glitch.me/api/rths/${rth_id}/reviews`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            authorization: token,
+          },
+          body: JSON.stringify({
+            rating: value,
+            comment: comment,
+          }),
+        }
+      );
+
+      const data = await response.json();
+      setValue(0);
+      setComment("");
+      setReview(review => [...review, data.data]);
+
+      if (response.ok) {
+        console.log("comment successfully");
+        alert("comment successfully");
+      } else {
+        console.error(`Failed to send comment: ${data.message}`);
+        alert(`Failed to send comment: ${data.message}`);
+      }
+    } catch (error) {
+      console.error(`Error: ${error.message}`);
+    }
+  };
 
   return (
     <>
       <ListItem style={{ paddingLeft: 3, marginTop: 5 }}>
         <ListItemAvatar>
-          <Avatar alt="Nama Pengguna" src="{person}" />
+          <Avatar alt={userData.username} src={userData.username} />
         </ListItemAvatar>
-        <ListItemText primary="Nama Pengguna" />
+        <ListItemText primary={userData.username} />
       </ListItem>
       <Box
         component="form"
@@ -47,10 +101,8 @@ export default function FormRatingComment() {
         }}
         noValidate
         autoComplete="off"
-        //   onSubmit={handleSubmit}
       >
         <Rating
-          name="simple-controlled"
           value={value}
           onChange={(event, newValue) => {
             setValue(newValue);
@@ -67,9 +119,10 @@ export default function FormRatingComment() {
         />
         <Button
           variant="text"
-          type="submit"
+          type="button"
           sx={{ padding: 1, marginTop: 1 }}
           color="primary"
+          onClick={handleSubmit}
         >
           Submit
         </Button>
