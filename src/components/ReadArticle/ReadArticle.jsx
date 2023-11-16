@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import {
   Box,
   Grid,
@@ -13,51 +13,51 @@ import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 import "./style.css";
 
 const ReadArticle = () => {
-  const [article, setArticle] = React.useState({
-    title: "Article Title",
-    author: "The Writer",
-    cover: "https://via.placeholder.com/300",
-    content: `
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, 
-      consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, 
-      consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    `,
-  });
+  const location = useLocation();
+  const { oneArticle } = location.state;
+ 
 
-  React.useEffect(() => {
-    // Fetch article data from API
-    async function fetchArticle() {
-      const response = await fetch("https://api.example.com/articles/1");
+  const [articles, setArticles] = React.useState([]);
+
+  useEffect(() => {
+    const fetchArticles = async () => {
+      const response = await fetch(
+        "https://sunrise-mousy-restaurant.glitch.me/api/articles",
+        {
+          method: "GET",
+        }
+      );
       const data = await response.json();
-      setArticle(data);
-    }
 
-    fetchArticle();
+      setArticles(data.data);
+    };
+
+    fetchArticles();
   }, []);
+  // const [article, setArticle] = React.useState({
+  //   title: "Article Title",
+  //   author: "The Writer",
+  //   cover: "https://via.placeholder.com/300",
+  //   content: `
+  //     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+  //     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, 
+  //     consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+  //     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, 
+  //     consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+  //     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  //   `,
+  // });
 
-  const relatedArticles = [
-    {
-      id: 1,
-      title: "Judul Artikel 1",
-      description: "Deskripsi Singkat Isi Artikel 1",
-      thumbnail: "https://via.placeholder.com/150",
-    },
-    {
-      id: 2,
-      title: "Judul Artikel 2",
-      description: "Deskripsi Singkat Isi Artikel 2",
-      thumbnail: "https://via.placeholder.com/150",
-    },
-    {
-      id: 3,
-      title: "Judul Artikel 3",
-      description: "Deskripsi Singkat Isi Artikel 3",
-      thumbnail: "https://via.placeholder.com/150",
-    },
-  ];
+  // React.useEffect(() => {
+  //   // Fetch article data from API
+  //   async function fetchArticle() {
+  //     const response = await fetch("https://api.example.com/articles/1");
+  //     const data = await response.json();
+  //     setArticle(data);
+  //   }
+
+  //   fetchArticle();
+  // }, []);
 
   return (
     <Box>
@@ -68,12 +68,11 @@ const ReadArticle = () => {
               <ArrowBackRoundedIcon fontSize="large" />
             </Link>
             <Typography variant="h3" className="font-bold">
-              {article.title}
+              {oneArticle.judul}
             </Typography>
-            <Typography variant="subtitle1">{article.author}</Typography>
-            <img id="cover" src={article.cover} alt="Cover Image" />
+            <img id="cover" src={oneArticle.gambar} alt="Cover Image" />
             <Typography variant="body1" className="text-justify">
-              {article.content}
+              {oneArticle.teks}
             </Typography>
           </Box>
         </Grid>
@@ -84,18 +83,18 @@ const ReadArticle = () => {
             </Typography>
             <hr className="mt-3 mb-5" />
             <Box>
-              {relatedArticles.map((article) => (
-                <Card key={article.id} className="mb-7">
+              {articles.map((article) => (
+                <Card key={article._id} className="mb-7">
                   <CardMedia
                     component="img"
                     height="140"
-                    image={article.thumbnail}
+                    image={article.gambar}
                     alt="Thumbnail Image"
                   />
                   <CardContent>
-                    <Typography variant="h5">{article.title}</Typography>
+                    <Typography variant="h5">{article.judul}</Typography>
                     <Typography variant="subtitle1">
-                      {article.description}
+                      {article.teks}
                     </Typography>
                     <Link to="/read-article" className="link">
                       Baca Selengkapnya
