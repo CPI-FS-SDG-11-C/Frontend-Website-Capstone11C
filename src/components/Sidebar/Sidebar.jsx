@@ -17,7 +17,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LogoutIcon from "@mui/icons-material/Logout";
 
 import Menu from "./Menu";
-import DetailRTH from "../DistrictAndRTH/DetailRTH";
+// import DetailRTH from "../DistrictAndRTH/DetailRTH";
 
 export default function Sidebar() {
   // const [open, setOpen] = useState(true);
