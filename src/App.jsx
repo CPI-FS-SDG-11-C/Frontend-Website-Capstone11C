@@ -24,21 +24,21 @@ function App() {
       >
         <div style={{ gridArea: "main" }}>
           <Routes>
-            <Route
+            {/* <Route
               index
               element={
                 <>
-                  <Sidebar style={{ gridArea: "sidebar" }} />
+                  <ProtectedRoute component={Sidebar} />
                   <ProtectedRoute component={MainView} />
                 </>
               }
-            />
+            /> */}
             <Route
               index
               path="/home"
               element={
                 <>
-                  <Sidebar style={{ gridArea: "sidebar" }} />
+                  <ProtectedRoute component={Sidebar} />
                   <ProtectedRoute component={MainView} />
                 </>
               }
@@ -47,7 +47,8 @@ function App() {
               path="/articles"
               element={
                 <>
-                  <Sidebar style={{ gridArea: "sidebar" }} />
+                  {/* <Sidebar style={{ gridArea: "sidebar" }} /> */}
+                  <ProtectedRoute component={Sidebar} />
                   <ProtectedRoute component={ListOfArticles} />
                 </>
               }
@@ -56,7 +57,8 @@ function App() {
               path="/read-article"
               element={
                 <>
-                  <Sidebar style={{ gridArea: "sidebar" }} />
+                  {/* <Sidebar style={{ gridArea: "sidebar" }} /> */}
+                  <ProtectedRoute component={Sidebar} />
                   <ProtectedRoute component={ReadArticle} />
                 </>
               }
@@ -65,7 +67,8 @@ function App() {
               path="/profile"
               element={
                 <>
-                  <Sidebar style={{ gridArea: "sidebar" }} />
+                  {/* <Sidebar style={{ gridArea: "sidebar" }} /> */}
+                  <ProtectedRoute component={Sidebar} />
                   <ProtectedRoute component={Profile} />
                 </>
               }
@@ -74,7 +77,8 @@ function App() {
               path="/edit"
               element={
                 <>
-                  <Sidebar style={{ gridArea: "sidebar" }} />
+                  {/* <Sidebar style={{ gridArea: "sidebar" }} /> */}
+                  <ProtectedRoute component={Sidebar} />
                   <ProtectedRoute component={Edit} />
                 </>
               }
@@ -83,7 +87,8 @@ function App() {
               path="/changepassword"
               element={
                 <>
-                  <Sidebar style={{ gridArea: "sidebar" }} />
+                  {/* <Sidebar style={{ gridArea: "sidebar" }} /> */}
+                  <ProtectedRoute component={Sidebar} />
                   <ProtectedRoute component={ChangePassword} />
                 </>
               }

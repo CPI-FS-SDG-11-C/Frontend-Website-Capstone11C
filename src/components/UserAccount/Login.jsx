@@ -65,10 +65,10 @@ export default function Login() {
           localStorage.setItem("token", result.data.token);
           navigate("/home");
         } else {
-          console.log('Failed to login');
+          alert('Failed to login');
         }
       })
-      .catch((err) => console.log('Failed to login', err));
+      .catch((err) => alert('Failed to login', err));
   };
 
   return (
