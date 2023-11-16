@@ -13,12 +13,16 @@ import { Container } from "@mui/material";
 import React, { useEffect, useState } from 'react';
 
 function changePassword() {
-  const [showPassword, setShowPassword] = React.useState(false);
+  const [showPassword1, setShowPassword1] = React.useState(false);
+  const [showPassword2, setShowPassword2] = React.useState(false);
+  const [showPassword3, setShowPassword3] = React.useState(false);
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const handleClickShowPassword = () => setShowPassword((show) => !show);
+  const handleClickShowPassword1 = () => setShowPassword1((show) => !show);
+  const handleClickShowPassword2 = () => setShowPassword2((show) => !show);
+  const handleClickShowPassword3 = () => setShowPassword3((show) => !show);
 
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
@@ -32,7 +36,7 @@ function changePassword() {
         return;
       }
 
-      const response = await fetch("https://soft-held-cobweb.glitch.me/api/users/updatepassword", {
+      const response = await fetch("https://sunrise-mousy-restaurant.glitch.me/api/users/updatepassword", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -81,18 +85,18 @@ function changePassword() {
                   </InputLabel>
                   <OutlinedInput
                     id="outlined-adornment-password"
-                    type={showPassword ? "text" : "password"}
+                    type={showPassword1 ? "text" : "password"}
                     value={currentPassword}
                     onChange={(e) => setCurrentPassword(e.target.value)}
                     endAdornment={
                       <InputAdornment position="end">
                         <IconButton
                           aria-label="toggle password visibility"
-                          onClick={handleClickShowPassword}
+                          onClick={handleClickShowPassword1}
                           onMouseDown={handleMouseDownPassword}
                           edge="end"
                         >
-                          {showPassword ? <VisibilityOff /> : <Visibility />}
+                          {showPassword1 ? <VisibilityOff /> : <Visibility />}
                         </IconButton>
                       </InputAdornment>
                     }
@@ -105,18 +109,18 @@ function changePassword() {
                   </InputLabel>
                   <OutlinedInput
                     id="outlined-adornment-password"
-                    type={showPassword ? "text" : "password"}
+                    type={showPassword2 ? "text" : "password"}
                     value={newPassword}
                     onChange={(e) => setNewPassword(e.target.value)}
                     endAdornment={
                       <InputAdornment position="end">
                         <IconButton
                           aria-label="toggle password visibility"
-                          onClick={handleClickShowPassword}
+                          onClick={handleClickShowPassword2}
                           onMouseDown={handleMouseDownPassword}
                           edge="end"
                         >
-                          {showPassword ? <VisibilityOff /> : <Visibility />}
+                          {showPassword2 ? <VisibilityOff /> : <Visibility />}
                         </IconButton>
                       </InputAdornment>
                     }
@@ -129,18 +133,18 @@ function changePassword() {
                   </InputLabel>
                   <OutlinedInput
                     id="outlined-adornment-password"
-                    type={showPassword ? "text" : "password"}
+                    type={showPassword3 ? "text" : "password"}
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                     endAdornment={
                       <InputAdornment position="end">
                         <IconButton
                           aria-label="toggle password visibility"
-                          onClick={handleClickShowPassword}
+                          onClick={handleClickShowPassword3}
                           onMouseDown={handleMouseDownPassword}
                           edge="end"
                         >
-                          {showPassword ? <VisibilityOff /> : <Visibility />}
+                          {showPassword3 ? <VisibilityOff /> : <Visibility />}
                         </IconButton>
                       </InputAdornment>
                     }
