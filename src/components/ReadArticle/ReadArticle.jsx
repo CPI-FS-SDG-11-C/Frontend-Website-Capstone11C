@@ -2,57 +2,58 @@ import './style.css';
 import {Link} from 'react-router-dom';
 
 export default function ReadArticle(){
+
+    //fetch data detail artikel
+    const [dtlarticle, setDtlarticle] = useState([]);
+
+    async function fetchData() {
+        try {
+            const apiUrl = import.meta.env.VITE_API_URL;
+            const response = await Axios.get(apiUrl + "articles/6521286b7452401756d29853");
+            return response.data;
+        } catch (error) {
+            console.error(error);
+            return[];
+        }
+    }
+    useEffect(() => {
+        async function loadData() {
+            const data = await fetchData();
+            setDtlarticle(data.data);
+        }
+        loadData();
+    }, [])
+
+    const arrayData = dtlarticle;
+
     return(
         <div className="box">
             <div className="main-content">
-                <div className="content-container">
-                    <h1>Article Title</h1>
-                    <p>The Writer</p>
-                    <img id="cover" src=""/>
+                <div className="content-container" key={data.judul}>
+                    <h1>{data.judul}</h1>
+                    <p>Pengarang: {data.pengarang}</p>
+                    <img id="cover" src={data.gambar}/>
                     <p id="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, 
-                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, 
-                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, 
-                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, 
-                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        {data.teks}
                     </p>
                 </div>
             </div>
             
             <div className="related-content">
                 <h2>Related Articles</h2><hr/>
-                <div className="card-rel">
-                    <img id="thumbnail" src=""/>
+                
+                {article.map((arr) => (
+                <div className="card" key={arr.judul} data={arr}>
+                    <img id="thumbnail" src={arr.gambar} style={{ width: '100%' }} />
                     <div className="article-title">
-                        <h3>Judul Artikel</h3>
-                        <p>Deskripsi Singkat Isi Artikel</p>
+                        <h4>{arr.judul}</h4>
                         <Link to="/read-article" className="link">Baca Selengkapnya</Link>
                     </div>
                 </div>
-                <div className="card-rel">
-                    <img id="thumbnail" src=""/>
-                    <div className="article-title">
-                        <h3>Judul Artikel</h3>
-                        <p>Deskripsi Singkat Isi Artikel</p>
-                        <Link to="/read-article" className="link">Baca Selengkapnya</Link>
-                    </div>
-                </div>
-                <div className="card-rel">
-                    <img id="thumbnail" src=""/>
-                    <div className="article-title">
-                        <h3>Judul Artikel</h3>
-                        <p>Deskripsi Singkat Isi Artikel</p>
-                        <Link to="/read-article" className="link">Baca Selengkapnya</Link>
-                    </div>
-                </div>
+                ))}
+
             </div>
+
         </div>
     )
 }
