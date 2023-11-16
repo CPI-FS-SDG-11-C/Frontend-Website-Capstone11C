@@ -56,9 +56,6 @@ export default function ListRTH() {
           </Card>
         </Paper>
       </div>
-      <div style={{ overflow: "visible" }}>
-        <DetailRTH />
-      </div>
     </>
   );
 }

@@ -23,7 +23,7 @@ import { Navigate } from "react-router-dom";
 export default function Sidebar() {
   // const [open, setOpen] = useState(true);
   const [openMenu, setOpenMenu] = useState(false);
-  const [showDetailRTH, setShowDetailRTH] = useState(false);
+  // const [showDetailRTH, setShowDetailRTH] = useState(false);
   const navigate = useNavigate();
   
   const handleLogoutClick = () => {
@@ -39,12 +39,6 @@ export default function Sidebar() {
     <>
       <div style={{ zIndex: openMenu ? 9999 : 0 }}>
         <Menu openMenu={openMenu} setOpenMenu={setOpenMenu} />
-      </div>
-      <div style={{ zIndex: showDetailRTH ? 9999 : 0 }} className="mx-auto">
-        <DetailRTH
-          showDetailRTH={showDetailRTH}
-          setShowDetailRTH={setShowDetailRTH}
-        />
       </div>
       <Box>
         <CssBaseline />
