@@ -23,13 +23,16 @@ function editProfile() {
 
     const fetchUserProfile = async () => {
       try {
-        const response = await fetch("https://soft-held-cobweb.glitch.me/api/users/profile", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            "authorization": token,
-          },
-        });
+        const response = await fetch(
+          "https://sunrise-mousy-restaurant.glitch.me/api/users/profile",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              authorization: token,
+            },
+          }
+        );
 
         if (response.ok) {
           const data = await response.json();
@@ -53,18 +56,23 @@ function editProfile() {
 
   const handleEditProfile = async () => {
     try {
-      const response = await fetch("https://soft-held-cobweb.glitch.me/api/users/update", {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          "authorization": token,
-        },
-        body: JSON.stringify({
-          username,
-          email,
-          phone_number,
-        }),
-      });
+      const token = localStorage.getItem("token");
+      
+      const response = await fetch(
+        "https://sunrise-mousy-restaurant.glitch.me/api/users/update",
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            authorization: token,
+          },
+          body: JSON.stringify({
+            username,
+            email,
+            phone_number,
+          }),
+        }
+      );
 
       const data = await response.json();
 

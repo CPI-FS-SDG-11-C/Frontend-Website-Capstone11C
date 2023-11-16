@@ -27,6 +27,8 @@ function Profile() {
 
   const fetchRthData = async (idRth) => {
     try {
+      const token = localStorage.getItem("token");
+      
       const response = await fetch(`https://soft-held-cobweb.glitch.me/api/rths/rth/${idRth}`, {
         method: "GET",
         headers: {
