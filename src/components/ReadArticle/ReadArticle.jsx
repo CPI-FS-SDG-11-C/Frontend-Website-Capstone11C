@@ -70,6 +70,7 @@ const ReadArticle = () => {
             <Typography variant="h3" className="font-bold">
               {oneArticle.judul}
             </Typography>
+            <Typography variant="subtitle1">{oneArticle.pengarang}</Typography>
             <img id="cover" src={oneArticle.gambar} alt="Cover Image" />
             <Typography variant="body1" className="text-justify">
               {oneArticle.teks}
@@ -93,10 +94,12 @@ const ReadArticle = () => {
                   />
                   <CardContent>
                     <Typography variant="h5">{article.judul}</Typography>
-                    <Typography variant="subtitle1">
-                      {article.teks}
-                    </Typography>
-                    <Link to="/read-article" className="link">
+                    <Typography variant="subtitle1">{article.teks}</Typography>
+                    <Link
+                      to="/read-article"
+                      className="link"
+                      state={{ oneArticle }}
+                    >
                       Baca Selengkapnya
                     </Link>
                   </CardContent>

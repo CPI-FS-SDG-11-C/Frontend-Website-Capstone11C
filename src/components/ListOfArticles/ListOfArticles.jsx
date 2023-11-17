@@ -23,9 +23,8 @@ const ListOfArticles = () => {
   }, []);
 
   return (
-
     <Container className="ml-16 w-fit h-screen xl:mx-auto">
-      <div className="py-8">
+      <div className="py-8 text-center">
         <h1>News and Article</h1>
       </div>
       <Grid container spacing={3}>
@@ -39,10 +38,14 @@ const ListOfArticles = () => {
                 alt="Judul Artikel"
               />
               <CardContent>
+                {/* <p>{oneArticle.pengarang}</p> */}
+                {/* {console.log(oneArticle.pengarang)} */}
                 <h3>{oneArticle.judul}</h3>
                 <p>{oneArticle.teks}</p>
                 <div className="link">
-                  <Link to="/read-article" state={{ oneArticle }}>Baca Selengkapnya...</Link>
+                  <Link to="/read-article" state={{ oneArticle }}>
+                    Baca Selengkapnya...
+                  </Link>
                 </div>
               </CardContent>
             </Card>
