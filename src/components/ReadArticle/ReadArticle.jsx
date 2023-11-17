@@ -15,14 +15,14 @@ import "./style.css";
 const ReadArticle = () => {
   const location = useLocation();
   const { oneArticle } = location.state;
- 
-
+  const { _id: id } = oneArticle;
   const [articles, setArticles] = React.useState([]);
-
+  const [articleOne, setArticleOne] = React.useState([]);
+  
   useEffect(() => {
     const fetchArticles = async () => {
       const response = await fetch(
-        "https://sunrise-mousy-restaurant.glitch.me/api/articles",
+        `https://sunrise-mousy-restaurant.glitch.me/api/articles`,
         {
           method: "GET",
         }
@@ -32,22 +32,26 @@ const ReadArticle = () => {
       setArticles(data.data);
     };
 
-    fetchArticles();
-  }, []);
-  // const [article, setArticle] = React.useState({
-  //   title: "Article Title",
-  //   author: "The Writer",
-  //   cover: "https://via.placeholder.com/300",
-  //   content: `
-  //     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-  //     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, 
-  //     consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-  //     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, 
-  //     consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-  //     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  //   `,
-  // });
+    const fetchArticlesOne = async () => {
+      const response = await fetch(
+        `https://sunrise-mousy-restaurant.glitch.me/api/articles/${id}`,
+        {
+          method: "GET",
+        }
+      );
+      const data = await response.json();
+      setArticleOne(data.data);
+      console.log(data.data);
+ 
+    };
 
+    fetchArticles();
+    fetchArticlesOne();
+  }, [id]);
+
+  const handleReload = () => {
+    window.location.reload();
+  };
   // React.useEffect(() => {
   //   // Fetch article data from API
   //   async function fetchArticle() {
@@ -68,12 +72,12 @@ const ReadArticle = () => {
               <ArrowBackRoundedIcon fontSize="large" />
             </Link>
             <Typography variant="h3" className="font-bold">
-              {oneArticle.judul}
+              {articleOne.judul}
             </Typography>
-            <Typography variant="subtitle1">{oneArticle.pengarang}</Typography>
-            <img id="cover" src={oneArticle.gambar} alt="Cover Image" />
+            <Typography variant="subtitle1">Penulis: {articleOne.pengarang}</Typography>
+            <img id="cover" src={articleOne.gambar} alt="Cover Image" />
             <Typography variant="body1" className="text-justify">
-              {oneArticle.teks}
+              {articleOne.teks}
             </Typography>
           </Box>
         </Grid>
@@ -84,23 +88,26 @@ const ReadArticle = () => {
             </Typography>
             <hr className="mt-3 mb-5" />
             <Box>
-              {articles.map((article) => (
-                <Card key={article._id} className="mb-7">
+              {articles.map((oneArticle, i) => (
+                <Card key={i} className="mb-7">
                   <CardMedia
                     component="img"
                     height="140"
-                    image={article.gambar}
+                    image={oneArticle.gambar}
                     alt="Thumbnail Image"
                   />
                   <CardContent>
-                    <Typography variant="h5">{article.judul}</Typography>
-                    <Typography variant="subtitle1">{article.teks}</Typography>
-                    <Link
+                    <Typography variant="h5">{oneArticle.judul}</Typography>
+                    <Typography variant="subtitle1">{oneArticle.teks}</Typography>
+                    {/* <Link
                       to="/read-article"
                       className="link"
-                      state={{ oneArticle }}
+                      state={{ article }}
                     >
                       Baca Selengkapnya
+                    </Link> */}
+                    <Link to="/read-article" state={{ oneArticle }} onClick={handleReload}>
+                      Baca Selengkapnya...
                     </Link>
                   </CardContent>
                 </Card>
