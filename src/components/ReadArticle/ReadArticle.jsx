@@ -18,11 +18,12 @@ const ReadArticle = () => {
   const { _id: id } = oneArticle;
   const [articles, setArticles] = React.useState([]);
   const [articleOne, setArticleOne] = React.useState([]);
+  const apiUrl = import.meta.env.VITE_API_URL;
   
   useEffect(() => {
     const fetchArticles = async () => {
       const response = await fetch(
-        `https://sunrise-mousy-restaurant.glitch.me/api/articles`,
+        apiUrl + `articles`,
         {
           method: "GET",
         }
@@ -34,7 +35,7 @@ const ReadArticle = () => {
 
     const fetchArticlesOne = async () => {
       const response = await fetch(
-        `https://sunrise-mousy-restaurant.glitch.me/api/articles/${id}`,
+        apiUrl + `articles/${id}`,
         {
           method: "GET",
         }
