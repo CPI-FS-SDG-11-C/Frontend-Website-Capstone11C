@@ -14,6 +14,7 @@ function Profile() {
   const [reviews, setReviews] = useState([]);
   const [averageRating, setAverageRating] = useState(0);
   const [totalReviews, setTotalReviews] = useState(0);
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   const navigate = useNavigate();
   
@@ -65,12 +66,12 @@ function Profile() {
       const token = localStorage.getItem("token");
 
       const response = await fetch(
-        `https://sunrise-mousy-restaurant.glitch.me/api/rths/rth/${idRth}`,
+        apiUrl + `rths/rth/${idRth}`,
         {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            "authorization": token,
+            authorization: token,
           },
         }
       );
@@ -100,12 +101,12 @@ function Profile() {
     const fetchUserProfile = async () => {
       try {
         const response = await fetch(
-          "https://sunrise-mousy-restaurant.glitch.me/api/users/profile",
+          apiUrl + "users/profile",
           {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
-              "authorization": token,
+              authorization: token,
             },
           }
         );
@@ -124,12 +125,12 @@ function Profile() {
     const fetchUserReviews = async () => {
       try {
         const response = await fetch(
-          "https://sunrise-mousy-restaurant.glitch.me/api/rths/userreviews",
+          apiUrl + "rths/userreviews",
           {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
-              "authorization": token,
+              authorization: token,
             },
           }
         );

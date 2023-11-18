@@ -16,6 +16,7 @@ export default function FormRatingComment({ rth_id, review, setReview }) {
   const [comment, setComment] = useState("");
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [userData, setUserData] = useState({});
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
 
@@ -28,7 +29,7 @@ export default function FormRatingComment({ rth_id, review, setReview }) {
     const fetchUser = async () => {
       try {
         const response = await fetch(
-          "https://soft-held-cobweb.glitch.me/api/users/profile",
+          apiUrl + "/users/profile",
           {
             method: "GET",
             headers: {
@@ -55,7 +56,7 @@ export default function FormRatingComment({ rth_id, review, setReview }) {
     try {
 
       const response = await fetch(
-        `https://sunrise-mousy-restaurant.glitch.me/api/rths/${rth_id}/reviews`,
+        `https://enchanting-laced-raisin.glitch.me/api/rths/${rth_id}/reviews`,
         {
           method: "POST",
           headers: {

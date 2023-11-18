@@ -28,6 +28,8 @@ function changePassword() {
     event.preventDefault();
   };
 
+  const apiUrl = import.meta.env.VITE_API_URL;
+
   const handleChangePassword = async () => {
     try {
       const token = localStorage.getItem("token");
@@ -36,18 +38,21 @@ function changePassword() {
         return;
       }
 
-      const response = await fetch("https://sunrise-mousy-restaurant.glitch.me/api/users/updatepassword", {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          "authorization": token,
-        },
-        body: JSON.stringify({
-          currentPassword,
-          newPassword,
-          confirmPassword,
-        }),
-      });
+      const response = await fetch(
+        apiUrl + "users/updatepassword",
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            "authorization": token,
+          },
+          body: JSON.stringify({
+            currentPassword,
+            newPassword,
+            confirmPassword,
+          }),
+        }
+      );
 
       const data = await response.json();
 

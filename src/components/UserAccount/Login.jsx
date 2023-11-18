@@ -42,9 +42,10 @@ const theme = createTheme({
 });
 
 export default function Login() {
-  const [username, setUsername] = useState();
-  const [password, setPassword] = useState();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -56,7 +57,7 @@ export default function Login() {
 
     await axios
       .post(
-        "https://sunrise-mousy-restaurant.glitch.me/api/users/login",
+        apiUrl +"users/login",
         loginData
       )
       .then((result) => {
@@ -65,10 +66,10 @@ export default function Login() {
           localStorage.setItem("token", result.data.token);
           navigate("/home");
         } else {
-          alert('Failed to login');
+          alert("Failed to login");
         }
       })
-      .catch((err) => alert('Failed to login', err));
+      .catch((err) => alert("Failed to login", err));
   };
 
   return (

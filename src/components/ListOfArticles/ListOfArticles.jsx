@@ -5,11 +5,12 @@ import "./style.css";
 
 const ListOfArticles = () => {
   const [articles, setArticles] = React.useState([]);
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     const fetchArticles = async () => {
       const response = await fetch(
-        "https://sunrise-mousy-restaurant.glitch.me/api/articles",
+        apiUrl + "articles",
         {
           method: "GET",
         }

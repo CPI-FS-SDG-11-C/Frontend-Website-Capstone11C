@@ -46,6 +46,7 @@ export default function SignUp() {
   const [password, setPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const navigate = useNavigate();
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -59,7 +60,7 @@ export default function SignUp() {
 
     try {
       const response = await axios.post(
-        "https://sunrise-mousy-restaurant.glitch.me/api/users/register",
+        apiUrl + "users/register",
         registrationData
       );
       console.log(response.data);

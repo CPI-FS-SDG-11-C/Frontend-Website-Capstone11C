@@ -11,6 +11,7 @@ function editProfile() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [phone_number, setPhoneNumber] = useState("");
+  const apiUrl = import.meta.env.VITE_API_URL;
   
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -24,7 +25,7 @@ function editProfile() {
     const fetchUserProfile = async () => {
       try {
         const response = await fetch(
-          "https://sunrise-mousy-restaurant.glitch.me/api/users/profile",
+          apiUrl + "users/profile",
           {
             method: "GET",
             headers: {
@@ -59,7 +60,7 @@ function editProfile() {
       const token = localStorage.getItem("token");
       
       const response = await fetch(
-        "https://sunrise-mousy-restaurant.glitch.me/api/users/update",
+        apiUrl + "users/update",
         {
           method: "PUT",
           headers: {
