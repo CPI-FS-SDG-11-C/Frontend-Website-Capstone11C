@@ -6,7 +6,7 @@ This project is a clone of Google Maps, the popular web mapping service that off
 
 <div align="center">
 <a href="http://34.128.85.199:5173/login">
-   ![Hijausantara]![image](https://github.com/CPI-FS-SDG-11-C/Frontend-Website-Capstone11C/assets/67674667/70096558-e095-4eb8-8f70-02e8fc8d2d57)
+   ![Screenshot 2023-11-19 220324](https://github.com/CPI-FS-SDG-11-C/Frontend-Website-Capstone11C/assets/67674667/21b6a9c7-9d93-4369-8d0c-8e3f073a6847)
 </a>
 </div>
 
