@@ -74,6 +74,26 @@ To get started with Gatere Maps locally, follow these steps:
 
 5. Open your browser and visit specified local host port to view the app eg. `http://localhost:5173`
 
+## Docker Image
+
+1. To run this project using Docker, make sure the docker engine is running, then open your terminal and run this command:
+
+```sh
+docker pull adanngrha/capstone-sgd-11c:frontend-capstone-11c
+```
+
+2. Run the container using the docker image:
+
+```sh
+docker run -it frontend-capstone-11c
+```
+
+3. Go to this url to check if the website is running. If it's blank, go to the route '/login'.
+
+```sh
+http://localhost:5173/
+```
+
 ## Deployment
 
 Hijausantara is deployed using Compute Engine from Google Cloud Platform. Any changes pushed to the main branch will trigger an automatic deployment.
