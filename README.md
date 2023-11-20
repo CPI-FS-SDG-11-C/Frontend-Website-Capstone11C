@@ -1,33 +1,43 @@
-![Screenshot 2023-11-19 220324](https://github.com/CPI-FS-SDG-11-C/Frontend-Website-Capstone11C/assets/67674667/155a3482-4caa-4863-8451-334f037609a8)# HijauSantara
+# HIJAUSANTARA
 
-This project is a clone of Google Maps, the popular web mapping service that offers satellite imagery, street maps, 360° panoramic views of streets, real-time traffic conditions, and route planning.
+<div align="center">
+
+   ![Thumbnail1](https://github.com/CPI-FS-SDG-11-C/Frontend-Website-Capstone11C/assets/67674667/596009e1-fb2f-4de4-90bc-a1cd9e0bbdb8)
+   
+</div>
+
+A user-friendly map that highlights all the Green Spaces in Surabaya, providing detailed information about each green space location, including size, facilities, and accessibility.
 
 ---
 
 <div align="center">
-<a href="http://34.128.85.199:5173/login">
-   <img alt="hijausantara" src="![Screenshot 2023-11-19 220324](https://github.com/CPI-FS-SDG-11-C/Frontend-Website-Capstone11C/assets/67674667/42eb9901-9aa5-4c9c-b50c-e0fb5c3a0b73)
-">
-</a>
+   <p>Click on the image to redirect to our web application.</p>
+   <a href="http://34.128.85.199:5173/login">
+
+![Screenshot 2023-11-19 220324](https://github.com/CPI-FS-SDG-11-C/Frontend-Website-Capstone11C/assets/67674667/aef52959-d418-4c1d-94df-c49c27a8f2d5)
+
+      
+   </a>
 </div>
 
 ## Technologies Used
 
 - [ReactJS](https://react.dev/) : A JavaScript library for building user interfaces.
+- [MaterialUI](https://mui.com/): A React UI component library that follows the principles of Material Design.
 - [Tailwind CSS](https://tailwindcss.com/) : A utility-first CSS framework for rapidly designing responsive web pages.
 - [Maps API](https://developers.google.com/maps/documentation/javascript): Used for rendering the interactive maps.
 - [GeoCoding API](https://developers.google.com/maps/documentation/geocoding): Integrated for location search functionality.
 - [Vite](https://vitejs.dev/) : A fast and efficient build tool for modern web development.
-- [Vercel](https://vercel.com/) : A cloud platform for static site deployment.
+- [Back End API](https://enchanting-laced-raisin.glitch.me/api/): An API to use in Front End Side.
 
 ## Features
 
-- Interactive map interface similar to Google Maps.
-- Search for locations using the integrated GeoCoding API.
-- Search for a location using coordinates.
-- Street view: You can explore the streets of any location in the world.
-- Utilizes React Icons for consistent and attractive UI elements.
-
+- ViewMaps
+- List of Sub-Districts that contain percentage of Green Space
+- Green Space Area Detail, Ratings & Comments allowed
+- Article
+- Profile
+  
 ## Getting Started
 
 To get started with Gatere Maps locally, follow these steps:
