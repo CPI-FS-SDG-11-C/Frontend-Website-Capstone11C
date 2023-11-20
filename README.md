@@ -1,4 +1,4 @@
-# HijauSantara
+![Screenshot 2023-11-19 220324](https://github.com/CPI-FS-SDG-11-C/Frontend-Website-Capstone11C/assets/67674667/155a3482-4caa-4863-8451-334f037609a8)# HijauSantara
 
 This project is a clone of Google Maps, the popular web mapping service that offers satellite imagery, street maps, 360° panoramic views of streets, real-time traffic conditions, and route planning.
 
@@ -6,7 +6,8 @@ This project is a clone of Google Maps, the popular web mapping service that off
 
 <div align="center">
 <a href="http://34.128.85.199:5173/login">
-   ![Screenshot 2023-11-19 220324](https://github.com/CPI-FS-SDG-11-C/Frontend-Website-Capstone11C/assets/67674667/21b6a9c7-9d93-4369-8d0c-8e3f073a6847)
+   <img alt="hijausantara" src="![Screenshot 2023-11-19 220324](https://github.com/CPI-FS-SDG-11-C/Frontend-Website-Capstone11C/assets/67674667/42eb9901-9aa5-4c9c-b50c-e0fb5c3a0b73)
+">
 </a>
 </div>
 
