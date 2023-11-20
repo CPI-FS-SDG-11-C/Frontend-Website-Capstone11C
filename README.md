@@ -43,11 +43,11 @@ To get started with Gatere Maps locally, follow these steps:
 
 1. Clone the repository:
    ```bash
-   https://github.com/gateremark/g_maps_clone.git
+   https://github.com/CPI-FS-SDG-11-C/Frontend-Website-Capstone11C.git
    ```
 2. Install the dependencies:
    ```bash
-   cd g_maps_clone
+   cd Frontend-Website-Capstone11C
    ```
    ```bash
    pnpm install
@@ -60,6 +60,7 @@ To get started with Gatere Maps locally, follow these steps:
 
      ```env
      VITE_REACT_APP_API_KEY=YOUR_API_KEY
+     VITE_API_URL=https://enchanting-laced-raisin.glitch.me/api/
      ```
 
      Replace `YOUR_API_KEY` with the actual API key you obtained from Google Cloud. By setting up the .env.local file with the appropriate API key, the application will be able to access the geocoding API and provide accurate property locations.
@@ -74,8 +75,8 @@ To get started with Gatere Maps locally, follow these steps:
 
 ## Deployment
 
-Gatere Maps is deployed using Vercel. Any changes pushed to the main branch will trigger an automatic deployment.
-You can visit the live version of HomeTopia at https://g-maps-clone.vercel.app/.
+Hijausantara is deployed using Compute Engine from Google Cloud Platform. Any changes pushed to the main branch will trigger an automatic deployment.
+You can visit the live version of HomeTopia at http://34.128.85.199:5173/login.
 
 ## Contributing
 
