@@ -61,7 +61,7 @@ To get started with Gatere Maps locally, follow these steps:
 
      ```env
      VITE_REACT_APP_API_KEY=YOUR_API_KEY
-     VITE_API_URL=https://enchanting-laced-raisin.glitch.me/api/
+     VITE_API_URL=https://enchanting-laced-raisin.glitch.me/api/ (BACK_END_API_KEY)
      ```
 
      Replace `YOUR_API_KEY` with the actual API key you obtained from Google Cloud. By setting up the .env.local file with the appropriate API key, the application will be able to access the geocoding API and provide accurate property locations.
