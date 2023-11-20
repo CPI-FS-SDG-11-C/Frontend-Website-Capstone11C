@@ -2,18 +2,11 @@
 
 This project is a clone of Google Maps, the popular web mapping service that offers satellite imagery, street maps, 360° panoramic views of streets, real-time traffic conditions, and route planning.
 
-<div align="center">
-   <img src="![WhatsApp Image 2023-11-19 at 22 03 37_3fff7214](https://github.com/CPI-FS-SDG-11-C/Frontend-Website-Capstone11C/assets/67674667/e14d5f53-665f-43b2-8f4c-f4cbff8f488c)
-">
-</div>
-
 ---
 
 <div align="center">
-<a href="https://g-maps-clone.vercel.app/">
-
-![GatereMaps](https://firebasestorage.googleapis.com/v0/b/hometopia-d224f.appspot.com/o/gmaps.png?alt=media&token=4c44a95d-4944-4f0c-a8f5-f9be2b522864)
-
+<a href="http://34.128.85.199:5173/login">
+   ![Hijausantara]![image](https://github.com/CPI-FS-SDG-11-C/Frontend-Website-Capstone11C/assets/67674667/70096558-e095-4eb8-8f70-02e8fc8d2d57)
 </a>
 </div>
 
